@@ -1,0 +1,1710 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[a4paper, left=3cm,right=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{amsfonts} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{empheq}
+\usepackage{setspace}
+\usepackage{color}
+
+\usepackage[utf8,applemac]{inputenc}
+\usepackage{tensor}
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{graphicx,subfigure}% Include figure files
+\usepackage[font=small, font+=it, format=hang, margin={1cm, 1cm}]{caption}
+\graphicspath{{figure/}}
+%\bibliographystyle{utphys}
+%\bibliographystyle{plain}
+
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{natbib}
+
+\numberwithin{equation}{section}
+
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\def\nn{\nonumber}
+\newcommand{\nnr}{\nonumber \\}
+\def\half{{1\over2}}
+\def\p{\partial}
+\def\eps{\epsilon}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\vph}{\varphi}
+\newcommand{\Imag}{\textrm{Im} \,}
+\newcommand{\Real}{\textrm{Re} \,}
+\newcommand{\Tr}{\textrm{Tr}}
+\newcommand{\wtd}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\im}{\textrm{i}}
+\renewcommand{\d}{\textrm{d}}
+
+\newcommand{\geo}{\color{blue}}
+%\newcommand{\kw}{\color{red}}
+\newcommand{\jl}{\color{green}}
+\newcommand{\cb}{\color{red}}
+
+\setlength{\parskip}{1ex} %设置段落间距
+
+\begin{document}
+	
+{\flushright{\today}}
+\tableofcontents
+
+
+\section{Taub-NUT metric}
+\subsection{Asymptotically flat Taub-NUT solution}
+
+
+Basically, Taub-NUT metric is a \textbf{stationary and spherically symmetric} solution of vacuum Einstein equation, it was found independently by Taub\cite{Taub:1951gm} and by Newman, Unti, and Tamburino\cite{Newman:1963sm}, and they turned out to be the two part of the metric\cite{Misner:1965aa} that solves vacuum Einstein equation $R_{\mu\nu}=0$:\cite{Misner:1963ss}\cite{Newman:1963sm}\cite{Taub:1951gm}
+\footnote{The $\ell$ appearing here should be related to nut charge $n$ in more recent literature. The Euclidean version is given by $t = i\tau, \ell = in$:
+	\be
+	\begin{aligned}
+		&ds^2 = f(r)(d\tau+2n\cos\theta d\phi)^2 + \frac{dr^2}{f(r)} + (r^2 - n^2)(d\theta^2 +\sin^2\theta d\phi^2)&\\
+		&f(r) = \frac{r^2 + n^2 -2m r}{r^2 - n^2}&\\
+	\end{aligned}
+	\ee}
+\be
+\begin{aligned}
+	ds^2 &= -f(r)(d\tilde{t} + 2\ell \cos\theta d\phi)^2+\frac{dr^2}{f(r)} + (r^2+\ell^2)(d\theta^2 + \sin^2\theta d\phi^2)&\\
+	f(r) &=  1 - 2\frac{mr+\ell^2}{r^2+\ell^2}&\\
+\end{aligned}
+\ee
+
+Due to the existence of $2\ell \cos\theta$ term, either $\theta = 0$ or $\theta = \pi$ is the rotating axis, thus we take a transformation $t = \tilde{t} - 2\ell \phi$, then the metric becomes:\cite{Griffiths:2009gr}
+\be
+\begin{aligned}
+	ds^2 &= -f(r)[dt+4\ell\sin^2(\theta/2) d\phi]^2 + 1/f(r) dr^2 + (r^2+\ell^2)(d\theta^2 + \sin^2\theta d\phi^2)&\\
+	\label{TNaxis}
+\end{aligned}
+\ee%Misner 63?
+which enables $\theta = 0$ to be an axis. From this expression it's easy to regard NUT as a general Schwarzschild space time, for general cases where $\ell \ne 0$. The region where $f(r) = 0$ is singular, which lies on surface $r_\pm = m \pm \sqrt{m^2 + \ell^2}$, where any combination of curvature is finite. Compared with Schwarzschild space-time, there's one new parameter, $\ell$, which turns out to act as the twist parameter of geodesic congruence as well as a magnetic mass, which maps to a torsion singularity which injects angular momentum in the space-time.\cite{Griffiths:2009gr}
+
+As an extension of Schwarzschild space-time, NUT space-time has some differences with Schwarzschild space-time as follows. First of all, there's no singularity since the squared Riemann curvature:
+
+\be
+\begin{aligned}
+	R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma} =&\frac{48}{\left(l^2+r^2\right)^6}\left(l^8-l^6 \left(m^2-12 m r+15 r^2\right)+5 l^4 r^2 \left(3 m^2-8 m r+3 r^2\right)\right.&\\
+	&\left.-l^2 r^4 \left(15 m^2-12 m r+r^2\right)+m^2 r^6\right)&
+\end{aligned}
+\ee
+
+as long as $\ell\ne 0$, is apparently finite everywhere, which allows us to consider the range of $r$ to be $(-\infty, +\infty)$. What's more, the term $R_{\mu\nu}^{\quad\alpha\beta}\sqrt{-g}\epsilon_{\alpha\beta\sigma\tau}R^{\mu\nu\sigma\tau}\ne 0$ for $\ell\ne 0$, but is identically zero for $\ell = 0$ case. However, the metric we use is not smooth everywhere, for example, as we transfering spherical coordinate $(r, \theta, \phi)$ to Cartesian coordinate $(x,y,z)$:
+\be
+ds^2 = -f(r)\left(dt + \frac{2\ell}{r(r+z)}(xdy-ydx)\right)^2 + f(r)^{-1}dr^2 + r^{-2}(r^2+l^2)(dx^2+dy^2+dz^2-dr^2)
+\ee
+
+We can easily recognize the singularity at $z = -r$. For another thing, the coordinate $t$ is not well-defined as in Schwarzschild case. To start with, we choose a covariant basis vectors:
+\be
+\begin{aligned}
+	\omega^0 &=& f(r)^{1/2}(dt + 4\ell \sin^2\frac{1}{2}\theta d\phi)\\
+	\omega^1 &=& f^{-1/2}dr\\
+	\omega^2 &=& (r^2 + \ell^2)^{1/2}d\theta\\
+	\omega^3 &=& (r^2 + \ell^2)^{1/2}\sin\theta d\phi\\
+\end{aligned}	
+\ee
+
+Through which we can express infinitesimal transformation along $t$ direction as:
+\be
+dt = f^{-1/2}\omega^0 -2\ell(r^2+\ell^2)^{-1/2}\tan\frac{1}{2}\theta \omega^3
+\ee
+It gets divergent when $\theta = \pi$.
+
+What's more, $\sqrt{-g} = (\ell^2 + r^2)\sin\theta$ will be 0 at $\theta = 0,\, \pi$. The singular behavior at $\theta = \pi$ means that although all components of Riemann tensor convege to zero as $1/r^3$ as $r\rightarrow \infty$, the Tub-NUT space-time is still not asympotically flat.
+
+So we have to find a better way to represent the space-time. As shown by author of \cite{Misner:1963ss}, since the differential of $t$ is divergent at $\theta = \pi$, we can define a new time coordinate $t_S = t + 2\lambda \phi$, so that $dt_S = \omega^0 -\lambda \cot\frac{1}{2}\theta \omega^3$ is analytic at $t = \pi$ while divergent at $t = 0$. Consequently, we can patch two hemisphere of space-time with $t$ and $t_S$ respectively around the equator, which gives a analytic coordinate. The author of \cite{Misner:1963ss} also showed that the new coordinate gives a topological $S^3$ of any constant $r$ surface.\cite{Griffiths:2009gr} However, Misner's construction has some problems with causality: due to the fact that $\phi$ is periodic by $\phi \sim \phi + 2\pi$, $t$ must be also periodic as $t \sim t + 4\pi\lambda$, which brings closed time-like curves for NUT space-time, where coordinate $\phi$ is time-like.
+
+The subset of the above metric \ref{TNaxis} for $f(r) > 0$ is called \textbf{NUT} metric, where $r$ is space-like and $t$ is time-like, which corresponds to $r < r_-$ and $r > r_+$. In the contrary, the region $r_- < r < r_+$ corresponds to \textbf{Taub} space-time.
+
+\subsubsection{N.U.T. space-time}
+Since for $f>0$ the causal structure of NUT space-time is the same as Schwarzschild space-time, we can also find Kruskal-like coordinate of NUT space-time.\cite{Miller:1971ie}\cite{Griffiths:2009gr}
+
+\subsubsection{Taub space-time}
+
+When $r_- < r < r_+$, the coordinate $r$ in the metric becomes time-like, and $t$ becomes space-like, this metric was firstly found by Taub\cite{Taub:1951gm} as a vacuum homogeneous cosmological model. In this case, it's more convenient to conduct coordinate transformation:
+\be
+\begin{aligned}
+	&t\rightarrow 2\ell(\psi' - \phi)\\
+	&r\rightarrow t\\
+	&f(r) \rightarrow -U(t)\\
+\end{aligned}
+\ee
+Then the metric \ref{TNaxis} becomes:
+\be
+\begin{aligned}
+	ds^2 = &-\frac{dt^2}{U(t)} + (2\ell)^2U(t)(d\psi' +\cos\theta d\phi)^2 + (t^2 + \ell^2)(d\theta^2 + \sin^2\theta d\phi^2)&\\
+	&U(t) \equiv \frac{\ell^2 + 2mt - t^2}{\ell^2 + t^2},\quad r_- < t < r_+&\\
+\end{aligned}
+\ee
+Then, perform Eddingdon-Finkelstein-like transformation $\psi' = \psi + \frac{1}{2\ell}\int dt/U(t)$, the line element takes the form:\textbf{   CHECK!!!}\footnote{In \cite{Griffiths:2009gr} eqn.(12.9), there's a sign different between $d\phi$, which doesn't matter because we can always choose $\phi \rightarrow -\phi$.}\cite{Misner:1965aa}\cite{Griffiths:2009gr}	
+\be
+ds^2 = (t^2 + \ell^2)(d\theta^2+\sin^2\theta d\phi^2) + U(t)(2\ell)^2(d\psi+\cos\theta d\phi)^2+2(2\ell)(d\psi+\cos\theta d\phi)dt
+\label{TN-Misner}
+\ee
+
+where
+\be
+U(t) = -1 + 2\frac{mt+\ell^2}{t^2+\ell^2}
+\ee
+
+In the line element, $\theta, \phi, \psi$ can be understood as Euler angle coordinates on $S^3$.\cite{Calin:2000ss} The solution found by Taub corresponds to $U(t)>0$ region, and the one found by NUT corresponds to $U(t)<0$. An analytic extension of metric \ref{TN-Misner} is given in $w,x,y,z$ coordinate:\footnote{Note that the coefficient of last term has different sign with equation (23) in \cite{Misner:1965aa}, which seems to be wrong.}\cite{Misner:1965aa}
+\be
+ds^2 = (t^2+\ell^2)(\sigma_x^2+\sigma_y^2)+U(t)(2\ell)^2\sigma_z^2 - 2(2\ell)\sigma_z dt
+\label{maximalTN}
+\ee
+where
+\be
+\begin{aligned}
+	\sigma_x &=& 2|q|^{-2}(xdw-wdx-zdy+ydz)\\
+	\sigma_y &=& 2|q|^{-2}(ydw + zdx - wdy - xdz)\\
+	\sigma_z &=& 2|q|^{-2}(zdw - ydx + xdy -wdz)\\
+	&&|q|^2 \equiv w^2 + x^2 + y^2 + z^2 = e^t\\
+\end{aligned}
+\ee
+
+and the coordiate transformation between $(w, x, y, z)$ and $(t, \theta, \phi, \psi)$ is:\footnote{This is also expressed as quaternion transformation:\textbf{CHECK!!!}
+	\be
+	q = \exp\left(\frac{1}{2}(t+\textbf{k}\phi + \textbf{i}\theta + \textbf{k}\psi)\right) = w + \textbf{i}x + \textbf{j}y + \textbf{k}z
+	\ee}
+\be
+\begin{aligned}
+	w &=& e^{t/2}\cos(\theta/2)\cos\frac{\phi+\psi}{2}\\
+	x &=& e^{t/2}\sin(\theta/2)\cos\frac{\phi-\psi}{2}\\
+	y &=& e^{t/2}\cos(\theta/2)\sin\frac{\phi-\psi}{2}\\
+	z &=& e^{t/2}\cos(\theta/2)\sin\frac{\phi+\psi}{2}\\
+\end{aligned}
+\ee
+
+This can be understood in this way. Consider a flat space-time on a cylinder with metric:
+\be
+ds^2 = dt^2 + d\theta^2
+\label{flatMetric}
+\ee
+
+Where $-\infty < t < + \infty, 0 < \theta < 2\pi$. Now we start to look for a metric that can cover this manifold, then we find 
+\be
+ds^2 = \frac{dx^2 + dy^2}{x^2 + y^2}
+\ee
+
+which can be transformed to \ref{flatMetric} through the transformation
+\be
+\begin{aligned}
+	x = e^t \cos\theta\\
+	y = e^t \sin\theta\\
+\end{aligned}
+\ee
+
+In fact, $(0,0)$ is not a singularity here, because it corresponds to $t\rightarrow-\infty$ in \ref{flatMetric}. We also notice that the geodesic from any finite point $(x_0, y_0)$ to infinity ($(0,0)$ or $\infty$) has infinite length, which means the space is maximal. The same we can find for \ref{maximalTN}, however, some geodesics can't extend to parameter values both $\lambda \rightarrow +\infty$ and $\lambda \rightarrow -\infty$, thus Taub-NUT space \textbf{is not complete}.\cite{Misner:1965aa}
+
+\subsubsection{Closed timelike curve}
+Although it Taub-Nut is a solution of Einstein equation, we can't easily say it's a valid solution, one of the problems is the existence of CTC(closed time-like curve) in NUT space-time. In metric \ref{TNaxis}, take $t, r, \theta$ to be constant, we have:
+\be
+ds^2 = -\left(4\ell^2 f(r) (1-\cos\theta)^2 - (r^2 +\ell^2)\sin^2\theta\right)d\phi^2
+\ee
+
+We find for NUT region where $f(r) > 0$ and $\cos\theta < -\frac{r^2 + \ell^2 -4\ell^2 f}{r^2 + \ell^2 +4 \ell^2 f}$, $ds^2 < 0$, which is apparently a CTC. 
+
+\subsection{extensions of Taub-NUT family}
+$\blacksquare$\textbf{ generalization of Taub-NUT geometry as two-parameter squashed metric}
+
+In \cite{Bobev:2016sh} the authers found a generalization of Taub-NUT metric by investigating a space-time whose boundary is two-parameter squashed sphere \ref{SquashedSphere}. The ansatz of line elements is:
+\be
+ds^2 = l_0(r)dr^2 + l_1(r)\sigma_1^2 + l_2(r)\sigma_2^2 + l_3(r)\sigma_3^2
+\ee
+
+Although functions $l_a(r)$ can't be solved analytically, but we can use numerical methods to solve Einstein Equation near near UV and IR limit.
+
+$\blacksquare$ \textbf{another parameter $\epsilon$}
+
+In Taub's original paper\cite{Taub:1951gm}, there's another parameter dubbed $\epsilon$, which can only be $\pm 1, 0$, in nowadays convention, the term "Taub-NUT" metric only refers to $\epsilon = 0$ case. \cite{Griffiths:2009gr} In fact, the case where $\epsilon \ne 1$ corresponds to solutions where the $\theta, \varphi$ are replaces by planes $(k = 0)$ or hyperboloids $(k = -1)$. In these solutions planar or hyperholic geometries for nuts and bolts,\cite{Chamblin:1998ah}\cite{Emparan:1999ac}\cite{Griffiths:2009gr} for these cases, {\color{red}{the bundle is trivial and we don't have to worry about Misner strings even though the $(\theta,\varphi)$ section is compact, but the boundary is still not flat.}}
+
+$\blacksquare$\textbf{with electric and magnetic field}
+
+Just as extending Schwarzschild metric to RN metric, or extending Kerr metric to KN metric, we can also extend Taub-NUT metric into one with non-zero electric and magnetic field.\cite{Griffiths:2009gr}
+
+$\blacksquare$\textbf{higher dimension}
+
+By now we're focused on 4-dimension Taub-AdS solution, the authors of \cite{Awad:2002ts} discussed asymptotically AdS Taub-NUT space-time with dimension 6, 8, and 10. The authors of \cite{Astefanesei:2004cb} discussed Taub-NUT-AdS metric in any even dimensions as well as their boundaries.
+
+$\blacksquare$ \textbf{Kerr-Taub-NUT metric}
+
+A generalization of both Kerr metric and Taub-NUT metric. \cite{Miller:1973km}
+
+$\blacksquare$\textbf{higher-curvature generalization}
+
+The authors of \cite{Bueno:2018bl} studied generalization of Euclidean AdS-Taub-NUT and AdS-Taub-Bolt solutions under higher-curvature theory. The higher-curvature gravity extension of Taub-NUT is especially useful in AdS because it's the effective action of string/M theory, see also\cite{Khodam:2009eg} and references therein.
+
+\subsection{Euclidean Taub-AdS solution}
+Taub-NUT solution can also be adapted to be solution of Einstein equation with non-zero cosmological cosntant $\Lambda$. The conventional form of \textbf{Euclidean} section of asymptotically AdS Taub-NUT metric can be written as\cite{Chamblin:1998ah}\cite{Emparan:1999ac}\footnote{By Wick rotation $t = i\tau, \ell = in$.}
+\be
+\begin{aligned}
+	&ds^2 = V(r)(d\tau +2n\cos\theta d\varphi)^2 +\frac{dr^2}{V(r)} + (r^2-n^2)(d\theta^2+\sin^2\theta d\varphi^2)&\\
+	& V(r) = \frac{r^2+n^2-2mr+\ell^{-2}(r^4-6n^2r^2-3n^4)}{r^2 - n^2}&\\
+\end{aligned}\
+\label{TNAdS}
+\ee
+
+Where the characteristic length is related to cosmological constant by $\Lambda = -3\ell^{-2}$\footnote{The relation between parameter $\ell$ and $\Lambda$ appearing in \cite{Chamblin:1998ah}\cite{Bobev:2016sh} is not correct.}, thence \ref{TNAdS} is the solution of vacuum Einstein equation with a minus cosmology constant $G_{\mu\nu}+\Lambda g_{\mu\nu} = 0$. Due to the non-zero $n$ value, the fibracation of $S^1$ in $\tau$ direction is non-trivial over the $S^2$ in $\theta,\varphi$ direction.
+
+\subsubsection{Taub-NUT AdS}
+
+The character of NUT is a zero dimensional fixed point of Killing vector, "nut"\footnote{More explicitly, consider Killing vector $(\partial_t)_\mu$, we have $(\partial_t)_\mu(\partial_t)^\mu = V(r)=0$ at "nut".}, which gives the following constrains on the metric\ref{TNAdS}:
+
+
+1) According to \ref{TNAdS}, at $r = n$, the $\theta, \varphi$ sphere degenerates into a point, which is exactly where the Killing fixed point locates, thus we require  $V(r=n)=0$. Since $r=n$ is a zero of denominator of $V(r)$, so is the numerator, which solves that:
+
+\be
+m = n\left(1-4\frac{n^2}{\ell^2}\right)
+\ee
+
+This makes condition 3) below satisfied immediately.
+
+
+2) We require $\cP(\tau)=4n\cP(\varphi)$\footnote{$\cP(x)$ denotes the period of coordinate $x$.} {\color{red}{in order to make "Dirac-Misner" string unobservable.}} \cite{Misner:1963ss} Together with $\cP(\varphi)=2\pi$, we have $\cP(\tau)=8\pi n$.\footnote{In \cite{Clement:2015wn}, the authors discussed Taub-NUT solution without time periodicity condition, where Misner strings are transparant to geodesics.}\footnote{This corresponds to \cite{Misner:1963ss} with $\lambda = 2n$.}
+
+
+3) The constrains above will make the point $r = n$ like the origin of $\mathbb{R}^4$ with a conical deficit. {\color{red}{To eliminate the deficit, we require the fiber close smoothly at $r = n$, which finally leads to $\cP(\tau)V'(r=n)=4\pi$, i.e., $V'(r=n)=1/2n$.}}\footnote{We can understand this in another way. The time period is given by $\cP(\tau) = 2\pi/\kappa$ where $\kappa=\sqrt{\nabla_\mu L\nabla^\mu L}$ is surface gravity, and $L = \sqrt{|g_{tt}|}$ given by eqn.(2.10) of \cite{Cvetic:2005tm}. We can directly check $\cP(\tau)V'(r=n)=4\pi$. }
+
+It's also shown in \cite{Chamblin:1998ah} that when $n = \ell/2$ Taub-NUT space-time reduces to $AdS_4$, with nut at $r = 0$.
+
+One interesting point about Taub-AdS solution is at $r\rightarrow n$, which corresponds to the fixed point of Killing vector field, is the same as original point of $\mathbb{R}^4$. Firstly we expand $ds^2_{{\rm Taub-AdS}}$ to the first order around $r = n$ which gives
+\be
+ds^2\Big|_{\rho\rightarrow0} = \frac{2n}{\rho}d\rho^2 + 2n\rho ((d\psi + \cos\theta d\phi)^2 + (d\theta^2 + \sin^2\theta d\phi^2)),\quad \rho = r - n,\quad \psi = \tau/2n
+\ee
+
+After taking $\rho = \eta^2/8n$, we have:
+\be
+ds^2\Big|_{\rho\rightarrow0} = d\eta^2 + \frac{1}{4}\eta^2 ((d\psi + \cos\theta d\phi)^2 + d\theta^2 + \sin\theta d\phi^2))
+\ee
+
+Which is exactly the same as $\mathbb{R}^4$ around original point.	
+\subsubsection{Taub-Bolt AdS}
+Taub-Bolt space-time has a 2-dimensional Killing fixed point at $r = r_b > n$. Constrains on this space-time is the simple generalization of those for NUT. We find condition (1 imposes
+\be
+m = \frac{r_b^2+n^2}{2r_b} +\frac{1}{2\ell^2}\left(r_b^3 -6n^2r_b-3\frac{n^4}{r_b}\right)
+\ee
+
+Put it into condition three gives the two branches of Taub-Bolt families:
+\be
+r_{b\pm} = \frac{\ell^2}{12n}\left(1\pm \sqrt{1-48\frac{n^2}{\ell^2}+144\frac{n^4}{\ell^4}}\right)
+\ee
+
+To make Euclidean Taub-Bolt space-time valid, we require the determinant to be positive, which gives
+\be
+\frac{n}{\ell} \le \sqrt{\frac{1}{6}-\frac{\sqrt{3}}{12}} \approx 0.149
+\ee
+
+What's worth notice is that AdS solution which corresponds to $n = \ell/2$ lies beyond the region.
+
+\subsubsection{boundary sphere}
+
+According to AdS/CFT correspondence, the phase transition that happens in the bulk, which corresponds to unitary field theory evolution on the boundary, is supposed to be unitary, too, which means there's no "information loss". However, chances are that there'll be information loss once bulk topology has changed, like black hole merging. As a space time with non-trivial topology\footnote{\color{red}{The killing vectors have a zero-dimensional fixed point set for "NUT" and two-dimensional one for "Bolt".}} and locally asymptotic AdS, Taub-NUT-AdS and Taub-Bolt-AdS provide us with a holography lab.\cite{Chamblin:1998ah} The phase transition between TN and TB is a generalization of Hawking-Page phase transition between AdS and SAdS.
+
+What's holographically meaningful is that the boundary metric of Taub-NUT-AdS \ref{TNAdS}, under $r\rightarrow \infty$ limit:
+\be
+ds^2 = \frac{\ell^2}{r^2}dr^2 +r^2\left[\frac{4n^2}{\ell^2}(d\psi +\cos\theta d\varphi)^2 + d\theta^2+\sin^2\theta d\varphi^2\right],\quad \psi \equiv \tau/2n
+\ee
+
+is the same as a one-parameter sphere\cite{Bobev:2016sh}:
+\be
+ds^2 = \frac{r_0^2}{4}\left(\sigma_1^2 +\frac{1}{1+\beta}\sigma_2^2 + \frac{1}{1+\alpha}\sigma_3^2\right)
+\label{SquashedSphere}
+\ee
+\be
+\sigma_1 = -\sin\psi d\theta +\cos\psi \sin\theta d\phi,\; \sigma_2 = \cos\psi d\theta +\sin\psi \sin\theta d\phi,\; \sigma_3 = d\psi +\cos\theta d\phi 
+\ee
+
+with the mapping
+\be
+\frac{1}{4(1+\alpha)} = \frac{n^2}{\ell^2},\qquad \beta = 0
+\ee
+
+
+\section{reducing Einstein equation}
+
+	The main purpose is to solve Einstein equation for a family of generalization of Euclidean AdS-Taub-NUT coordinate whose asymptotical boundary is squashed $\mathbb{S}^7$:\cite{Page:1983es}\cite{Ooguri:2008ss}
+\be
+	ds_{*}^2 = d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=3}^3 \omega_i^2 + \frac{\lambda^2}{4}\sum\limits_{i=3}^3 (\nu_i + (\cos\mu)\omega_i)^2
+	\label{ds2star}
+\ee
+
+	where
+\be
+	0 \le \mu \le \pi, \quad \omega_i = \sigma_i -\Sigma_i ,\quad \nu_i = \sigma_i + \Sigma_i
+\ee
+
+	The ansatz of bulk metric is
+\be	
+	ds^2 = f_1^2(r)dr^2 + f_2^2(r)d\mu^2 + f_3^2(r)\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2 + f_4^2(r)\frac{\lambda^2}{4}\sum\limits_{i=1}^3 (\nu_i + (\cos\mu)\omega_i)^2
+\ee
+
+	In order to solve the four unknown functions $f_i(r)$, we need to firstly reduce Einstein Equation $E_{\mu\nu} \equiv G_{\mu\nu} + \Lambda g_{\mu\nu} = 0$ into equations of $f_i(r)$, as done in \cite{Bobev:2016sh}. Note that in $AdS_8$, the relation of cosmology constant and AdS radius becomes: $\Lambda = -\frac{21}{\ell^2}$.
+
+\subsection{trial 1: reduce directly}	
+	In general, to get all components of Einstein equation, one has to calculate along the following order from the metric tensor:
+	\be
+		g_{\mu\nu} \stackrel{1} {\longrightarrow} \Gamma^\rho_{\mu\nu} \stackrel{2}{\longrightarrow} R^\mu_{\nu\rho\sigma} \stackrel{3}{\longrightarrow} R_{\mu\nu}, R, G_{\mu\nu}\cdots 
+		\label{route}
+	\ee
+	
+	It turns out step 1 takes several minutes to finish, and step \textcircled{\small 2} is an impossible mission, the kernel of Mathematica crashes during the calculation every time.
+	
+\subsection{trial 2: package RGTC}
+	"Riemannnian geometry and tensor calculation" is a package for calculating above quantities in an efficient way\footnote{Thank Lorenzo Papini for recommending this package.}, given the metric and parameters, it will calculate automatically for a bunch of quantities, from $g^{\mu\nu}, \Gamma^\rho_{\mu\nu}$ to $R, G_{\mu\nu}$. However, it doesn't finish the calculation of connection in half an hour. I think it's because the package uses {\tt Simplify}, which should be avoided when dealing with complicated expressions. 
+	
+\subsection{trial 3: using abstract metric to simplify}
+	We tried to hold the form of metric as an abstract function during going along the routine \ref{route}. For example, if $g_{\theta\theta} = f_3^2(r)\cos\mu (1-\sin\phi)$\footnote{I made this up.}, we just keep it to be $g_{\theta\theta} = g_{\theta\theta}(r,\mu,\phi)$. Using this method, we obtain expression of Einstein equation in terms of abstract functions successfully, but the substitution process can't be finished.
+	
+\subsection{trial 4: tetrad method\cite{Andy}}
+	In tetrad literature, there's a substitue way to calculate all quantities in tetrad coordinate. The vierbeins are defined as
+\be
+	g_{\mu\nu} = \delta_{ab}e^a_{\ \mu}e^b_{\ \nu},\quad e^a_{\ \mu}\bar{e}^\mu_{\ b} = \delta^a_b,\quad e_{a\mu} = \delta_{ab}e^b_{\ \mu}
+\ee
+
+	The verbein derivative is
+\be
+	d_{lmn} \equiv  e_{l\kappa}\bar{e}^\mu_{\ m}\partial_\nu \bar{e}^\kappa_{\ m} = -\bar{e}^\mu_{\ m}\bar{e}^\nu_{\ n}\partial_\nu e_{l\mu}
+\ee
+
+	Under the assumption that torson vanishes, we have the following formulas
+\be
+\begin{aligned}
+	\Gamma_{lmn} = \frac{1}{2}(d_{lmn}- d_{lnm} + d_{mnl} - d_{mln} + d_{nml}-d_{nlm})\\
+	R_{klmn} = \partial_k \Gamma_{mnl} -\partial_l \Gamma_{mnk} + \Gamma^a_{ml}\Gamma_{ank}-\Gamma^a_{mk}\Gamma_{anl} + (\Gamma^a_{kl}-\Gamma^a_{lk})\Gamma_{mna}\\
+\end{aligned}	
+\ee
+
+	It turns out the step up to $d_{lmn}$ is to complicated to finish.
+	
+\subsection{consistency check}
+	Due to the $R\times \mathbb{S}^{n-1}$ topology of ${\rm AdS_n}$, the metric is given by
+\be
+	ds_n^2 = dr^2 + f^2_0(r) ds_{\mathbb{S}^{n-1}}^2
+	\label{AdSsph}
+\ee
+
+	Where $f_0(r) = l\sinh(r/l)$ is given by Einstein equation $R_{\mu\nu} + \Lambda g_{\mu\nu} = 0$, the relation between AdS radius $l$ and cosmological constant is given by $\Lambda = -\frac{(n-1)(n-2)}{2l^2}$. It can also be calculated easily that the scalar curvature of \ref{AdSsph} is $R_{AdS_n} = - \frac{n(n-1)}{l^2}$. 
+	
+	For an alternative coordinate on $\mathbb{S}^{n-1}$, the curvature may be different because of change of scale. Take the metric as $d\bar{s}_{\mathbb{S}^{n-1}}^2$, assume its scalar curvature is $\bar{R}$, we can conduct this scale transformation:
+\be
+	d\tilde{s}_{\mathbb{S}^{n-1}}^2 = \frac{\bar{R}}{(n-1)(n-2)}d\bar{s}_{\mathbb{S}^{n-1}}^2 \equiv \frac{1}{\rho^2}d\bar{s}_{\mathbb{S}^{n-1}}^2
+\ee
+
+	Where $d\tilde{s}_{\mathbb{S}^{n-1}}^2$ is at the same scale of $ds_{\mathbb{S}^{n-1}}^2$, with the same scalar curvature, or maybe they're totally the same. And $\rho$ is the radius of $d\bar{s}_{\mathbb{S}^{n-1}}^2$, so
+\be
+	ds_n^2 = dr^2 + f^2(r) d\bar{s}_{\mathbb{S}^{n-1}}^2 = dr^2 + f^2(r) \rho^2 	d\tilde{s}_{\mathbb{S}^{n-1}}^2 = dr^2 + f^2(r) \rho^2 	ds_{\mathbb{S}^{n-1}}^2 
+	\label{AdSnonUnit}
+\ee
+
+	Compare \ref{AdSnonUnit}, \ref{AdSsph} we get
+\be
+	f(r) = \frac{f_0(r)}{\rho} = \frac{l}{\rho}\sinh\frac{r}{l}
+\ee
+
+	If, at this time, we set $f(r) = \exp(r/L)$, at large $r$ limit\footnote{Question: why is the equation invalid beyond large $r$ limit?}, we have
+\be
+	L = l + \ln\frac{2\rho}{l}
+\ee
+	
+	In our case, given $L = \sqrt{28/41}, l = 1$, we can obtain the radius of the sphere coordinate $ds_*^2$, and thus scalar curvature of AdS space $ds_*^2$, which is
+\be	
+	R = 168\exp(2-4\sqrt{\frac{7}{41}}) \approx 237.74
+\ee
+
+\section{understanding the squashed sphere geometry}
+
+\subsection{constructing squashed sphere metric}
+
+	Firstly, let's take a look at round seven sphere, which is isometrically embedded in $\mathbb{R}^8$. The Einstein metric on the round sphere, and its SO(8) isometry group, can be understood by means of the embedding. However, the round sphere metric which is SO(8) invariant, is only one of an infinite class of metrics on a topologically seven-sphere manifold. What's more, generally speaking, not every deformation of round $\mathbf{S}^7$ can solve Einstein equations, and the fact is, among all the metrics obtained on topologically seven-sphere embedded in $\mathbf{R}^8$, the metric on round sphere is the only Einstein one. Remarkably, there exists a second Einstein metric on $\mathbf{S}^7$, which is obtained by an isometric embedding in $\mathbf{HP}^2$, the quaternionic projective plane.
+	
+	The quaternionic projecting space is characterised as the equivalence relation $(Q_1, Q_2, Q_3)\sim\mu(Q_1, Q_2, Q_3)$, thus the two quaternionic coordinates:
+\be
+	q_1 \equiv Q_1Q_3^{-1},\quad q_2 \equiv Q_2Q_3^{-1}
+\ee
+
+	cover the projecting space when $Q_3 \ne 0$. To obtain the metric, we firstly take $\mathbf{S}^{11}$ as an SU(2) bundle over $\mathbf{HP}^2$, writing $\mathbf{S}^{11}$ metric in terms of $q_1$ and $q_2$, we obtain:\footnote{The conjugation of a quaternion $q = a + b\textbf{i} + c\textbf{j}+ d\textbf{k}$ is denoted and defined as $\bar{q} = a - b\textbf{i} - c\textbf{j} - d\textbf{k}$. }\cite{Duff:1986}
+\be
+	ds^2 = |\bar{q}_i dq_i \bar{Q}_3 Q_3 + dQ_3 Q_3^{-1}|^2 + (1+\bar{q}_kq_k)^{-1} d\bar{q}_i dq_i - (1+ \bar{q}_kq_k)^{-2}\bar{q}_i dq_i d\bar{q}_j q_j
+\ee
+
+	and project orthogonally to the orbits of SU(2) we get the metric on $\mathbf{HP}^2$, we obtain
+\be
+	ds^2 = (1+\bar{q}_kq_k)^{-1} d\bar{q}_i dq_i - (1+\bar{q}_kq_k)^{-2}\bar{q}_idq_id\bar{q}_jq_j
+	\label{FubiniStudy}
+\ee
+
+	This is the standard Fubini-Study metric. We can also introduce a real parametrization of $(q_1, q_2)$ as:
+\be
+	q_1 = U\tan\chi \cos\frac{1}{2}\mu,\quad q_2 = V\tan\chi\sin\frac{1}{2}\mu
+\ee
+	
+	where $U, V\in$ SU(2), and $0\le \chi\le\pi/2, 0\le \mu\le\pi$. Parametrizing $U, V$ by Euler angles $(\theta, \phi, \psi)$ and $(\Theta, \Phi, \Psi)$ respectively:
+\be
+	U = e^{\textbf{k}\phi/2} e^{\textbf{i}\theta/2} e^{\textbf{k}\psi/2},\quad 
+	V = e^{\textbf{k}\Phi/2} e^{\textbf{i}\Theta/2} e^{\textbf{k}\Psi/2}
+\ee
+
+	we can show that
+\be
+	2U^{-1}dU = i\sigma_1 + j\sigma_2 + k\sigma_3,\quad 2V^{-1}dV = i\Sigma_1 +j\Sigma_2 +k\Sigma_3	
+\ee
+
+	where $\sigma_i, \Sigma_i$s are left invariant real 1-forms satisfying SU(2) algebra:\footnote{The left invariance means invariance under $U\rightarrow aU$ or $V\rightarrow bV$ where $a,b\in SU(2)$, and the SU(2) algebra is just:
+		\be
+		d\sigma_i = -\frac{1}{2}\varepsilon_{ijk}\sigma_j \wedge \sigma_k,\quad d\Sigma_i  = -\frac{1}{2}\varepsilon_{ijk} \Sigma_j \wedge \Sigma_k
+		\ee
+	}
+\be
+	\sigma_1 = \cos\psi d\theta + \sin\psi\sin\theta d\phi,\quad \sigma_2 = -\sin\psi d\theta + \cos\psi\sin\theta d\phi,\quad \sigma_3 = d\psi + \cos\theta d\phi
+\ee
+
+	and the same for $\Sigma_i$s in term of $\Theta$s. Thus the standard Funibi-Study metric\ref{FubiniStudy} becomes
+\be
+	ds^2 = d\chi^2 + \frac{1}{4}\sin^2\chi[d\mu^2 + \frac{1}{4}\sin^2\mu \omega_i^2 + \frac{1}{4}\cos^2\chi(\nu_i + \cos\mu \omega_i)^2],\quad \nu_i\equiv \sigma_i + \Sigma_i,\quad \omega_i \equiv \sigma_i - \Sigma_i
+\ee
+
+	{\color{red}{The metric on the seven sphere is obtained by setting $\chi = $const}}, and after taking out the conformal factor $\sin^2\chi$, we obtain the metric on squashed seven sphere:
+\be
+	ds^2 = d\mu^2 +\frac{1}{4}\sin^2\mu\omega_i^2 + \frac{1}{4}\lambda^2 (\nu_i +\cos\mu \omega)^2
+	\label{SquashedSphereMetric1}
+\ee
+
+	One can show that under vierbein
+\be
+	e^0 = d\mu, \quad e^i = \frac{1}{2}\sin\mu\omega_i,\quad e^I = \frac{1}{2}\lambda (\nu_i +\cos\mu\omega_i),\quad i = 1,2,3,\quad I = 4,5,6
+\ee
+
+	The Ricci tensor is diagonal:
+\be
+	R_{ab} = {\rm diag}(\alpha, \alpha, \alpha, \alpha, \beta, \beta, \beta),\quad \alpha = 3-3\lambda^2/2,\quad \beta = \lambda^2 + (2\lambda^2)^{-1}.
+\ee
+	
+	To make the metric Einstein, we set $\alpha = \beta$, which yields $\lambda^2 = 1, 1/5$, the former corresponds to round sphere, and the second corresponds to squashed $\mathbf{S}^7$. The existence of two different Einstein metric is unique for $\mathbf{S}^7$, which is first found by Jensen at 1975.\cite{Jensen:1975}
+	
+	What's more, there's an equivalent way to express all these things. Consider $\mathbf{S}^7$ as $\mathbf{S}^3$ bundle over $\mathbf{S}^4$, where $ds^2_{\mathbf{S}^4} = d\mu^2 + \frac{1}{4}\sin^2\mu\tilde{\Sigma}_i^2$, after choosing a gauge potential $A^i = \cos^2\frac{1}{2}\mu\tilde{\Sigma}_i$, is
+\be
+	ds^2 = d\mu^2 + \frac{1}{4}\sin^2\mu\tilde{\Sigma}_i^2 + \lambda^2 (\sigma_i - A^i)^2
+	\label{nextDs2}
+\ee
+
+	This is an "inverse-Kaluza-Klein" procession, where we construct a metric on $\mathbf{S}^7$ out of a four-dimensional metric plus a SU(2) bundle. In fact we find the metric returns to $\mathbf{S}^3 \times \mathbf{S}^4$ if we set $A^i = 0$, and parameter $\lambda$ controls the scale of $\mathbf{S}^3$ bundle. And we can easily see the equivalence between this construction and the former one \ref{SquashedSphereMetric1} through
+\be
+	i\tilde{\Sigma}_1 + j\tilde{\Sigma}_2 + k\tilde{\Sigma}_3 = V(i\omega_1  + j\omega_2 + k\omega_3)V^{-1}
+\ee
+
+	\subsection{compactification and susy breaking}
+	
+	There're two major ways to obtain real-world 4-d theory from string/M theory or supergravity, the first one is compactification\cite{Grana:2005cr}, and the other is brane-world\cite{Maartens:2010wg}. We're mainly talking about compactification. An important result in the literature is that the number of SUSYs remained after compactification, which is equal to the number of killing spinors, is only determined by the holonomy of the compactification spaces. More specifically, the resulting 4-d theory has $\cN = 1$ SUSY if the compactification space has holonomy ${\rm G_2}$, and $\cN=0$ when the compactification space has holonomy Spin(7).\cite{Gubster:2002mt}\cite{Duff:2002ty} The importance of $\cN=1$ case mainly lies in that it's related to the real-world phenomenological model. For a more mathematical way of demonstrating, see \cite{Bryant:1989eh}. $\mathbf{S}^7$ is important in the literature of supergravity compactification, because of the fact "$7 + 4 = 11$", where 4 is the space-time we can observe, and 11 is the theoretically largest dimension that supergravity works. What makes $\mathbf{S}^7$ special is that it happens to obtain two different Einstein metrics.
+	
+	The mechanism of spontaneously compactification is that the number of supersymmetries in $d = 4$ space-time is the same as in 11 space-time, which is exactly the number of Killing spinors solving the Killing equation. For round sphere, there're eight Killing spinors, meaning the original $\cN = 8$ susy in round sphere. Some people believe the largest $\cN = 8$ theory is a candidate of THE unified theory, and some consider $\cN = 1$ susy theory to solve the hierarchy problem and \textbf{accormodate chiral fermion representation in grand unified theory}. It's accomplished by \cite{Awada:1983bd} that consider the compactification senario $X^{(11)} \simeq AdS_4 \times \cM^7$, where $\cM^7$ is given by a squashed sphere in \ref{SquashedSphereMetric1}, choose the orientation of the squashed sphere so that all the 1-forms satisfy left-invariant SU(2) algebra, the Killing spinor equation gives one solution, which means the the theory is $\cN = 1$, we call the sphere \textit{left-squashed} sphere. And once designate right-invariant 1-forms with algebra $d\sigma_i = \epsilon_{ijk}\sigma_j\wedge\sigma_k, d\Sigma_i = \epsilon_{ijk}\Sigma_j\wedge \Sigma_k$, susy will be broken up to $\cN = 0$, called the \textit{right-squashed} sphere. With the breaking of susy, the symmetry breaks from SO(8) for round sphere to SO(5)$\times$SU(2) for squashed sphere.\footnote{While solving bosonic part of supergravity, people set all components of gauge field strength $F_{MNPQ}, M,N,P,Q = 1,\cdots 11$ vanish except for $F_{\mu\nu\rho\sigma} = 3m\epsilon_{\mu\nu\rho\sigma}, \mu,\nu\rho\sigma = 1,\cdots 4$. (Freund-Rubin choice)}\footnote{In \cite{Englert:192ds}, the author solved out the two non-trivial parallelisms on $\mathbf{S}^7$, which includes non-zero torsion when defining a connection that was originally found by Cartan and Schouten, \textbf{the two classes of torsions correspond to two different kind of orientation we discussed above.}}\cite{Duff:1983ss}
+	
+	
+	\textbf{note: the chapter 4 in \cite{Aldazabal:2007is}, it seems the relation between two different kinds of squashing in \cite{Bobev:2017pf} and \ref{SquashedSphereMetric1} is shown. }
+	
+\subsection{Geometry property of squashed sphere solution}
+	We mainly focus on the geometry property of \ref{SquashedSphereMetric1} with $\lambda^2 = 1/5$, which corresponds to the other Einstein metric on seven sphere. We use tetrad to faciliate the analysis. Firstly, we find that although the Ricci tensor is a constant metric, which somehow shows an enhanced symmetry, it's clearly shown through the Riemann tensor the squashed sphere is no longer a maximal symmetric space. Actually, \textbf{it reserves an SO(5) symmetry between $(\mu,\theta,\phi,\psi)$ and an SO(3) symmetry between $(\Theta, \Phi, \Psi)$.}
+	
+	Firstly we check the submanifold with constant $(r, \Theta, \Phi, \Psi)$, we find the submanifold isn't a maximal space with SO(5) group. For example, in tetrad coordinate where $g_{\mu\nu} = \delta_{ab}e^a_\mu e^b_\nu,\quad \mu,\nu = 2,3,4,5,\quad a,b = 1,2,3,4$, we have
+\be
+	R_{1212} = \frac{33-44\cos\mu +8\cos2\mu}{4(3-2\cos\mu)^2}\qquad
+	R_{3434} = \frac{37-40\cos\mu + 8\cos2\mu}{4(3-2\cos\mu)^2}
+\ee
+
+	The same happens for constant $(r, \theta, \phi, \psi)$ subspace.
+
+	Then we checked submanifold with constant $(r, \mu, \theta, \phi, \psi)$ as well as constant $(r,\mu, \Theta, \Phi, \Psi)$ surfaces, which are both round $\mathbb{S}^3$.
+	
+\subsection{review of quaternionic bundles}
+	The metric form of our third ansatz is an SU(2) bundle on $S^4$, with a Spin(7) holonomy,  was firstly discussed by \cite{Page:1985lb}\cite{Gibbons:1990rb} and further discussed in \cite{Bakas:1998gi}\cite{Kanno:1999sh} where the space is described as a SUSY solution where the fermionic fields are turned off. Similar metric ansatz was also discussed in \cite{Cvetic:2001ac}\cite{Gukov:2001sm} and generalized by \cite{Cvetic:2001gh}.
+	
+	The authors of \cite{Hiragane:2003km} discussed solutions of Einstein equations with positive c.c., including nut, bolt and T-bolt, which acts like $dr^2 + (ds_4^2+\phi_2^2+\phi_3^2) + \# t^2 \phi_1^2$ near the origin. Their ansatz is similar with our third one but with $b(r)$ splited into three different functions.	
+	
+\subsection{RG flow between solutions}
+	The spontaneous breaking of $\cN = 8$ gauged local supersymmetry in ${\rm AdS_4}$ supergravity to $\cN = 1,0$ is interpreted, via AdS/CFT correspondence, through the RG flow from SO(5)$\times$SO(3) UV fixed point to SO(8) IR fixed point.\cite{Ahn:1999mh} Take the ansatz of $d = 11$ supergravity solution as
+\be
+	ds^2 = R^2\left[e^{-7u}g_{\alpha\beta}dx^\alpha dx^\beta +e^{2u+3v}\left(\frac{1}{4}d\mu^2+\frac{1}{16}\omega_i^2\sin^2\mu\right) + e^{2u-4v}\frac{1}{16}(\nu_i+\omega_i \cos\mu)^2\right]
+\ee
+	
+	where $u(x), v(x)$ indicate the size and squash of the seven sphere respectively:
+\be
+	{\rm Vol}(S^7) = \frac{\pi^4}{3}e^{7u}R^7,\quad \lambda^2 = e^{-7v}
+\ee
+	
+	And we can use the following Lagrangian to obtain EoM:
+\be
+\begin{aligned}
+	\cL = \sqrt{-g}\left(R - \frac{63}{2}(\partial u)^2 -21(\partial v)^2 - V(u,v)\right)\\
+	V(u,v) = e^{-9u}\left[-6e^{4v}-48e^{-3v}+12e^{-10v}+2Q^2e^{-12u}\right]\\
+\end{aligned}
+\ee
+	
+	The AdS-invariant ground states correspond to $u,v$ taking constant value and the space-time becoming maximally symmetric that $R_{abcd} = \frac{1}{3}\Lambda (g_{ac}g_{bd} - g_{ad}g_{bc}), R_{ab} = g_{ab}$. The two solutions correspond to round 7-sphere $S^7$ and squashed sphere $\tilde{S}^7$:
+\be
+\begin{aligned}
+	S^7:\quad u = \frac{1}{6}\ln(Q/3),\quad v = 0(\lambda^2 = 1), \quad \Lambda = -12\Big|\frac{Q}{3}\Big|^{-3/2}\\
+	\tilde{S}^7: u = \frac{1}{12}\ln(3^{-4}5^{10/7}Q^2),\quad v = \frac{1}{7}\ln5(\lambda^2 = 1/5),\quad \Lambda = -12\cdot 3^{7/2}5^{-5/2}\Big|\frac{Q}{3}\Big|^{-3/2}\\
+\end{aligned}
+\ee
+
+	According to the plot of $V(u,v)$, we find $S^7$ corresponds to a saddle point and $\tilde{S}^7$ corresponds to a maximum. One might guess there's possibility of tunnelling from $\tilde{S}^7$, whose potential energy is higher, to $S^7$. However, both the two "vacuum solutions" are shown to be totally stable perturbatively and nonperturbatively. Semiclassically, the process is regarded as a gravity instanton {\color{red}{with infinite action, which prevents the vacuum decay.}}
+
+\subsection{stability of the constructed Euclidean space}
+
+	It was conjectured by \cite{Ooguri:2017as} that any non-supersymmetric AdS vacuum supported by fluxes must be unstable. \cite{Ooguri:2017av} considered a 11-d Euclidean space ${\rm AdS}_5\times \mathbb{C}{\rm P}^3$ which backups the conjecture.
+
+\section{reducing Einstein equation II}
+	We set a new coordinate ansatz which preserves the SO(5) symmetry,
+\be
+ds^2 = f_1(r)^2 dr^2 + f_2(r)^2 \left(d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2\right) + \frac{\lambda^2}{4}\sum\limits_{i=1}^3 f_{i+2}(r)^2(\nu_i + (\cos\mu)\omega_i)^2
+\label{ansatz2}
+\ee	
+
+	Using tetrad method, we firstly take the eight-bein as $e^a_\mu$ such that the metric tensor $g_{\mu\nu}$ of \ref{ansatz2} satisfies $g_{\mu\nu} = \delta_{ab}e^a_\mu e^b_\nu$. Then in local octbein coordinate, the octbein derivative, connection, riemann tensor, ricci tensor, scalar curvature, Einstein equations are given by:\cite{Andy}
+	
+\be
+\begin{aligned}
+	&d_{lmn} &\equiv& \quad e_{l\mu} e_n^\nu \partial_\nu e_m^\mu&\\
+	&\Gamma_{lmn} &=&\quad  \frac{1}{2}(d_{lmn} - d_{lnm} + d_{mnl} - d_{mln} + d_{nml} - d_{nlm})&\\
+	&R_{klmn} &=&\quad  \partial_k \Gamma_{mnl} - \partial_l\Gamma_{mnk} + \Gamma^a_{ml}\Gamma_{ank} - \Gamma^a_{mk}\Gamma_{anl} + (\Gamma^a_{kl} - \Gamma^a_{lk})\Gamma_{mna}&\\
+	&R_{km} &=&\quad  \delta^{ln}R_{klmn}&\\
+	&R &=&\quad  \delta^{km}R_{km}&\\
+	&E_{km} &=&\quad  R_{km} - \frac{1}{2}R\delta_{km} + \Lambda \delta_{km}&\\
+\end{aligned}
+\ee
+
+	Since for ${\rm AdS_8}$, the cosmological constant is related to AdS radius $l$ through $\Lambda = -\frac{(d-1)(d-2)}{2l^2}$, we set $l = 1$ from now on, so $\Lambda = -21$ for $d = 8$. The five independent equations are given by
+\be
+	\begin{small}
+		\begin{aligned}
+			&\frac{\lambda ^2 f_1^2 f_3^2}{2 f_2^4}+\frac{\lambda ^2 f_1^2 f_4^2}{2 f_2^4}+\frac{\lambda ^2 f_1^2 f_5^2}{2 f_2^4}-\frac{6
+				f_1^2}{f_2^2}+\frac{f_1^2 f_5^2}{4 \lambda ^2 f_3^2 f_4^2}+\frac{f_1^2 f_4^2}{4 \lambda ^2 f_3^2 f_5^2}		+\frac{f_1^2 f_3^2}{4 \lambda ^2
+				f_4^2 f_5^2}-\frac{f_1^2}{2 \lambda ^2 f_3^2}-\frac{f_1^2}{2 \lambda ^2 f_4^2}&\\
+			%-------------
+		&	-\frac{f_1^2}{2 \lambda ^2 f_5^2}-21 f_1^2+\frac{4 f_2' f_3'}{f_2
+				f_3}+\frac{4 f_2' f_4'}{f_2 f_4}+\frac{4 f_2' f_5'}{f_2 f_5}+\frac{6 f_2'^2}{f_2^2}+\frac{f_3' f_4'}{f_3
+				f_4}+\frac{f_3' f_5'}{f_3 f_5}+\frac{f_4' f_5'}{f_4 f_5} = 0&\\\\
+			%%%%%%%%%%%%%%%%%%%
+			&-\frac{3 f_1' f_2'}{f_1 f_2}-\frac{f_1' f_3'}{f_1 f_3}-\frac{f_1' f_4'}{f_1 f_4}-\frac{f_1' f_5'}{f_1
+				f_5}-\frac{3 f_1^2}{f_2^2}+\frac{f_1^2 f_5^2}{4 \lambda ^2 f_3^2 f_4^2}+\frac{f_1^2 f_4^2}{4 \lambda ^2 f_3^2 f_5^2}
+			+\frac{f_1^2 f_3^2}{4
+				\lambda ^2 f_4^2 f_5^2}-\frac{f_1^2}{2 \lambda ^2 f_3^2}&\\
+			%--------------
+		&	-\frac{f_1^2}{2 \lambda ^2 f_4^2}-\frac{f_1^2}{2 \lambda ^2 f_5^2}-21 f_1^2		+\frac{3
+				f_2''}{f_2}+\frac{3 f_2' f_3'}{f_2 f_3}+\frac{3 f_2' f_4'}{f_2 f_4}+\frac{3 f_2' f_5'}{f_2 f_5}+\frac{3
+				f_2'^2}{f_2^2}
+			+\frac{f_3''}{f_3}+\frac{f_3' f_4'}{f_3 f_4}+\frac{f_3' f_5'}{f_3 f_5}&\\
+			%--------------
+		&	+\frac{f_4''}{f_4}+\frac{f_4'
+				f_5'}{f_4 f_5}+\frac{f_5''}{f_5} = 0&\\\\
+			%%%%%%%%%%%%%%%%%%%
+		&	-\frac{4 f_1' f_2'}{f_1 f_2}-\frac{f_1' f_4'}{f_1 f_4}-\frac{f_1' f_5'}{f_1 f_5}+\frac{3 \lambda ^2 f_1^2 f_3^2}{2
+				f_2^4}+\frac{\lambda ^2 f_1^2 f_4^2}{2 f_2^4}+\frac{\lambda ^2 f_1^2 f_5^2}{2 f_2^4}-\frac{6 f_1^2}{f_2^2}-\frac{f_1^2 f_5^2}{4 \lambda ^2 f_3^2
+				f_4^2}
+			-\frac{f_1^2 f_4^2}{4 \lambda ^2 f_3^2 f_5^2}&\\
+			%--------------
+		&	+\frac{3 f_1^2 f_3^2}{4 \lambda ^2 f_4^2 f_5^2}+\frac{f_1^2}{2 \lambda ^2 f_3^2}-\frac{f_1^2}{2
+				\lambda ^2 f_4^2}-\frac{f_1^2}{2 \lambda ^2 f_5^2}-21 f_1^2		+\frac{4 f_2''}{f_2}+\frac{4 f_2' f_4'}{f_2 f_4}+\frac{4 f_2' f_5'}{f_2
+				f_5}+\frac{6 f_2'^2}{f_2^2}+\frac{f_4''}{f_4}+\frac{f_4' f_5'}{f_4 f_5}&\\
+			%--------------
+		&	+\frac{f_5''}{f_5} = 0&\\\\
+			%%%%%%%%%%%%%%%%%%%
+		&	-\frac{4 f_1' f_2'}{f_1 f_2}-\frac{f_1' f_3'}{f_1 f_3}-\frac{f_1' f_5'}{f_1 f_5}+\frac{\lambda ^2 f_1^2 f_3^2}{2
+				f_2^4}+\frac{3 \lambda ^2 f_1^2 f_4^2}{2 f_2^4}+\frac{\lambda ^2 f_1^2 f_5^2}{2 f_2^4}-\frac{6 f_1^2}{f_2^2}-\frac{f_1^2 f_5^2}{4 \lambda ^2 f_3^2
+				f_4^2}
+			+\frac{3 f_1^2 f_4^2}{4 \lambda ^2 f_3^2 f_5^2}&\\
+			%--------------
+		&	-\frac{f_1^2 f_3^2}{4 \lambda ^2 f_4^2 f_5^2}-\frac{f_1^2}{2 \lambda ^2 f_3^2}+\frac{f_1^2}{2
+				\lambda ^2 f_4^2}-\frac{f_1^2}{2 \lambda ^2 f_5^2}-21 f_1^2+\frac{4 f_2''}{f_2}+\frac{4 f_2' f_3'}{f_2 f_3}+\frac{4 f_2' f_5'}{f_2
+				f_5}+\frac{6 f_2'^2}{f_2^2}+\frac{f_3''}{f_3}+\frac{f_3' f_5'}{f_3 f_5}&\\
+			%--------------
+		&	+\frac{f_5''}{f_5}	= 0&\\\\
+			%%%%%%%%%%%%%%%%%%%
+		&	-\frac{4 f_1' f_2'}{f_1 f_2}-\frac{f_1' f_3'}{f_1 f_3}-\frac{f_1' f_4'}{f_1 f_4}+\frac{\lambda ^2 f_1^2 f_3^2}{2
+				f_2^4}+\frac{\lambda ^2 f_1^2 f_4^2}{2 f_2^4}+\frac{3 \lambda ^2 f_1^2 f_5^2}{2 f_2^4}-\frac{6 f_1^2}{f_2^2}+\frac{3 f_1^2 f_5^2}{4 \lambda ^2
+				f_3^2 f_4^2}	-\frac{f_1^2 f_4^2}{4 \lambda ^2 f_3^2 f_5^2}&\\
+			%--------------
+		&	-\frac{f_1^2 f_3^2}{4 \lambda ^2 f_4^2 f_5^2}-\frac{f_1^2}{2 \lambda ^2
+				f_3^2}-\frac{f_1^2}{2 \lambda ^2 f_4^2}+\frac{f_1^2}{2 \lambda ^2 f_5^2}-21 f_1^2+\frac{4 f_2''}{f_2}
+			+\frac{4 f_2' f_3'}{f_2 f_3}+\frac{4
+				f_2' f_4'}{f_2 f_4}+\frac{6 f_2'^2}{f_2^2}+\frac{f_3''}{f_3}+\frac{f_3' f_4'}{f_3 f_4}&\\
+			%--------------
+		&	+\frac{f_4''}{f_4} = 0&\\	
+		\end{aligned}
+	\end{small}
+\label{MainEquations}
+\ee
+
+	
+
+	$\blacksquare$ \textbf{consistency check:}
+	
+Comparing the Einstein equations we obtain with standard AdS solution, we first obtain the curvature of metric \ref{ds2star} is $21/2$, which indicates the radius of constant $r$ sphere in coordinate
+\be
+	ds^2 = dr^2 + f(r)^2 ds_*^2
+\ee
+	
+	is $2f(r)$, while the radius of constant $r$ surface for standard ${\rm AdS_8}$ solution
+\be
+	ds^2 = dr^2 + l^2\sinh^2\left(\frac{r}{l}\right) ds_{\mathbb{S}^7}^2
+\ee
+
+	is $l\sinh(r/l)$, take $l = 1$, we obtain $f(r) = \sinh(r)/2$. After substitute it along with $\lambda = 1$ into the einstein equations, we successfully check the correctness of the equations we get. 
+	
+	We can also check the above equations \ref{MainEquations} with special solution of Einstein equations: space-time of "psudo-AdS", with constant $r$ surface the squashed sphere $\tilde{\mathbb{S}}^7$ where $\lambda^2 = 1/5$:\footnote{In fact, it's easy to show that the only values that $\lambda$ can take so that the metric
+\be
+	ds^2 = dr^2 + f(r)^2 ds_*^2
+\ee
+
+	solves the Einstein equations are $\lambda = 1, 1/\sqrt{5}$. Where
+\be
+	ds_{*}^2 = d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2 + \frac{\lambda^2}{4}\sum\limits_{i=1}^3 (\nu_i + (\cos\mu)\omega_i)^2
+\ee 
+
+	is given in \ref{ds2star}. For example, from \ref{branches}.}
+	
+\be
+	ds^2 = dr^2 + \frac{9}{20}\sinh^2(r) ds^2_{\tilde{\mathbb{S}}^7}
+	\label{AdSwithSquashedS7}
+\ee
+
+\subsection{UV expansion}
+
+Set the asymptotic behavior of $f_i(r)$s at $r\rightarrow \infty$ to be as Fefferman-Graham type and thus we are dealing with \textbf{asymptotically locally ${\rm AdS_8}$}:
+\be
+\begin{aligned}
+	&f_1(r) = 1&\\
+	&f_i(r) = \sum\limits_{j = 0}^{+\infty} \cF_{ij}e^{-(j-1)r},\quad i = 2,3,4,5.&\\
+\end{aligned}
+\ee
+
+We solve the expansion perturbatively up to $O(\exp(-9r))$, and there're totally 7 free parameters which can be chosen as $\{\cF_{i0}, \cF_{j7}\}_{i = 2,3,4,5}^{j = 2,3,4}$. The first several terms are
+\be
+\begin{aligned}
+	f_2(r) = &\cF_{20}e^{r} + e^{-r} \left(\frac{\lambda ^2 \left(\cF_{30}^2+\cF_{40}^2+\cF_{50}^2\right)}{24
+		\cF_{20}^3}\right.&\\
+	%---------------
+	&\left.-\frac{\cF_{20} \left(\cF_{30}^4-2
+		\left(\cF_{40}^2+\cF_{50}^2\right)
+		\cF_{30}^2+\left(\cF_{40}^2-\cF_{50}^2\right)^2\right)}{240 \lambda ^2
+		\cF_{30}^2 \cF_{40}^2 \cF_{50}^2}-\frac{1}{5 \cF_{20}}\right) + O(e^{-3r})&\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+	f_3(r) = &\cF_{30}e^{r} + \frac{e^{-r}}{240\cF_{30}}\left( -\frac{2 \lambda ^2 \left(13 \cF_{30}^2+\cF_{40}^2+\cF_{50}^2\right)
+		\cF_{30}^2}{\cF_{20}^4}\right.&\\
+	%------------------------------
+	&\left.	+\frac{-13 \cF_{30}^4+2
+		\left(\cF_{40}^2+\cF_{50}^2\right) \cF_{30}^2+11
+		\left(\cF_{40}^2-\cF_{50}^2\right)^2}{\lambda ^2 \cF_{40}^2
+		\cF_{50}^2}+\frac{24 \cF_{30}^2}{\cF_{20}^2}\right) +O(e^{-3r})&\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+	f_4(r) = &\cF_{40}e^{r} + \frac{e^{-r}}{240\cF_{40}}\left(-\frac{2 \lambda ^2 \left(\cF_{30}^2+13 \cF_{40}^2+\cF_{50}^2\right)
+		\cF_{40}^2}{\cF_{20}^4}\right.&\\
+	%------------------------
+	&\left.	+\frac{11 \cF_{30}^4+2 \left(\cF_{40}^2-11
+		\cF_{50}^2\right) \cF_{30}^2-13 \cF_{40}^4+11 \cF_{50}^4+2
+		\cF_{40}^2 \cF_{50}^2}{\lambda ^2 \cF_{30}^2 \cF_{50}^2}+\frac{24
+		\cF_{40}^2}{\cF_{20}^2}\right) + O(e^{-3r})&\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+	f_5(r) =  &\cF_{50}e^{r} + \frac{e^{-r}}{240\cF_{50}}\left(-\frac{2 \lambda ^2 \left(\cF_{30}^2+\cF_{40}^2+13 \cF_{50}^2\right)
+		\cF_{50}^2}{\cF_{20}^4}\right.&\\
+	%-------------------------------
+	&\left.	+\frac{11 \cF_{30}^4+\left(2 \cF_{50}^2-22
+		\cF_{40}^2\right) \cF_{30}^2+11 \cF_{40}^4-13 \cF_{50}^4+2
+		\cF_{40}^2 \cF_{50}^2}{\lambda ^2 \cF_{30}^2 \cF_{40}^2}+\frac{24
+		\cF_{50}^2}{\cF_{20}^2}\right) + O(e^{-3r})&\\
+\end{aligned}
+\ee
+
+	\subsection{IR expansion - NUT}
+	Assume the space looks like $\mathbb{R}^9$ near the origin, take $r_0$ to indicate the location of NUT\footnote{Note that different from ${\rm AdS_4 Taub-NUT}$ case, the value of $R_0$ is unknown but not important, because we can set translation to eliminate it.}, the geometry at IR end where $r \sim r_0$ behaves like: 
+\be
+	ds^2 = dr^2 + \# (r-r_0)^2 ds_*^2
+\ee
+
+	So we made the ansatz for IR expansion that
+\be
+\begin{aligned}
+	&f_1(r) = 1&\\
+	&f_i(r) = F_{ij}(r-r_0)^j,\quad i = 2,3,4,5,\quad j = 1,2,3,\cdots&\\
+	&F_{31} = F_{41} = F_{51} \equiv a&\\
+\end{aligned}
+\ee
+
+	To make the first order of expansion vanish, we have to let\footnote{The signs of these functions $f_i(r)$ are not important, since all of them appear in squared form in line element, so we take the convention that first order of all $f_i(r)$ to be positive.}
+\be
+	\left\{
+	\begin{aligned}
+		&F_{21} = \frac{1}{2},&\\
+		&a = \frac{1}{2\lambda},&
+	\end{aligned}
+	\right.\qquad {\rm or}\qquad
+	\left\{
+	\begin{aligned}
+		&F_{21} = \frac{3\sqrt{5}}{10},&\\
+		&a = \frac{3}{10\lambda},&
+	\end{aligned}
+	\right.
+	\label{branches}
+\ee
+
+	For the first choice, we have solved \ref{MainEquations} up to order $O(r-r_0)^{13}$, there're three free parameters, which we can choose to be $F_{23}, F_{33},F_{43}$, the first several terms are:
+\be
+\begin{aligned}
+	f_2(r) = &\frac{\rho }{2}+\rho ^3 F_{23}+\rho ^5 \left(-\frac{2}{5} \lambda ^2 \left(F_{33}^2+F_{43} F_{33}+F_{43}^2\right)+\frac{7}{30} \lambda  (F_{33}+F_{43})\right.&\\
+	&\left.	-\frac{1}{60} F_{23} (96 \lambda 
+	(F_{33}+F_{43})-91)-9 F_{23}^2-\frac{49}{720}\right)+O\left(\rho ^7\right)&\\
+	%-----------------------
+	f_3(r) = &\frac{\rho }{2 \lambda }+\rho ^3 F_{33}-\frac{\rho^5}{720 \lambda } \left(-144 \lambda ^2 \left(13 F_{33}^2-12 F_{43} F_{33}-12 F_{43}^2\right)+252 \lambda  (F_{33}-4 F_{43})\right.&\\
+&	\left.+96 F_{23} (12 \lambda  (F_{33}+6
+		F_{43})-7)+49\right)+O\left(\rho ^7\right)&\\
+	%-----------------------
+			f_4(r) = &\frac{\rho }{2 \lambda }+\rho ^3 F_{43}-\frac{\rho^5}{720 \lambda } \left(144 \lambda ^2 \left(12 F_{33}^2+12 F_{43} F_{33}-13 F_{43}^2\right)-252 \lambda  (4 F_{33}-F_{43})\right.&\\
+			&\left.+96 F_{23} (12 \lambda  (6 F_{33}+F_{43})-7)+49\right)+O\left(\rho ^7\right)&\\
+			%-----------------------------
+	f_5(r) = &\frac{\rho }{2 \lambda }+\frac{\rho ^3}{12 \lambda } (-12 \lambda  (F_{33}+F_{43})-48 F_{23}+7)&\\
+	&+\frac{\rho ^5}{240 \lambda } \left(48 \lambda ^2 \left(13 F_{33}^2+38 F_{43} F_{33}+13 F_{43}^2\right)-644 \lambda 
+	(F_{33}+F_{43})\right.&\\
+	&\left.+112 F_{23} (48 \lambda  (F_{33}+F_{43})-23)+11520 F_{23}^2+147\right)+O\left(\rho ^7\right)&\\
+	%-------------
+\end{aligned}
+\ee
+	
+	Here we define $\rho \equiv r - r_0$, and when assigning $F_{23} = F_{33} = F_{43} = 1/2$, we obtain the standard ${\rm AdS_8}$ case. And for the second choice, up to order $O(r-r_0)^{13}$, the solution is fixed, with no free parameter:
+\be
+	\begin{aligned}
+			&f_2(r) = \frac{3\sqrt{5}}{10}\left(\rho +\frac{\rho ^3}{6}+\frac{\rho ^5}{120}+\frac{\rho ^7}{5040}+\frac{\rho ^9}{362880}+\frac{\rho ^{11}}{39916800}+\frac{\rho ^{13}}{6227020800}+O\left(\rho ^{15}\right)\right) \rightarrow  \frac{3\sqrt{5}}{10}\sinh\rho &\\
+			&f_3(r)  = \frac{3}{10\lambda}\left(\rho +\frac{\rho ^3}{6}+\frac{\rho ^5}{120}+\frac{\rho ^7}{5040}+\frac{\rho ^9}{362880}+\frac{\rho ^{11}}{39916800}+\frac{\rho ^{13}}{6227020800}+O\left(\rho ^{15}\right)\right)\rightarrow \frac{3}{10\lambda}\sinh\rho&\\	
+			&f_4(r) = f_5(r) = f_3(r)&\\
+	\end{aligned}
+\label{branch1ansatz2IR}
+\ee
+	
+	This branch of solution corresponds to \ref{AdSwithSquashedS7}.
+	
+\subsection{numerical integration - NUT}
+\subsubsection{repeating ${\rm AdS_4}$ case}
+The first question is there're three indetermined functions, yet we have four independent equations. Trying to throw an equation, we found that the second (or the third, fourth, because indices 1,2,3 are interchangable,) equation can be throw away without influencing the NUT-IR expansion coefficients up to $O(r-r_*)^{11}$. So we throw out the second equation and solve (49) of \cite{Bobev:2016sh} numerically. 
+
+The first finding is the initial condition can't be set exactly at $\rho = 0$, so we have to introduce an IR "cutoff" to set the condition. Assume the IR cutoff is at $10^{-M}$, we find there's a narrow window of $M$ in which the solution is stable with the IR cutoff, for $\gamma_4 = 1/6, \beta_4 = 1/12$, the window is $(28.425\pm0.025,29.75\pm 0.25)$; for $\gamma_4 = 3/14, \beta_4 = 1/12$, the window is $(28.7\pm0.1, 29.75\pm 0.25)$.
+
+\subsubsection{numerical solution}
+
+The first thing is also to throw out a equation out of the five \ref{MainEquations}. Through IR expansion up to $O(r-r_*)^{13}$, we see it's OK to throw either one of the equations. From here on, when doing numerical simulation of \ref{MainEquations}, we'll always throw away the first equation.
+
+Although there're three free parameters that controls the family, some of them may cause zeros of functions $f_i(r)$, which bring about singularity of the space-time, thus all of those solutions should be eliminated. For $F_{23}, F_{33}, F_{4,3}\in [0,1]\times [0,1] \times[0,1]$, we tried on some samples of choice, it turns out only the green points give us physically reasonable solutions, see Fig.\ref{IRRegion}. Fig.\ref{950595}. The investigation to expand the range of sample points also shows that the allowed region is within the vicinity of plane $F_{33} = F_{43}$, see Fig.\ref{IRLarge}.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{IRRegion}
+	\hfil
+	\includegraphics[width=7cm]{IRRegion2}
+	\caption{{\rm The validity of numerical solution determined by  $F_{23},F_{33},F_{43}$ in the full moduli space. Red points correspond to singular space-time, and green points correspond to regular space-time. We can see that as the parameters getting larger and larger, the allowed region is getting thinner and thinner, which is very similar to Fig.17 in \cite{Bobev:2016sh}.}}
+	\label{IRRegion}
+\end{figure}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{IRLarge}
+	\caption{{\rm Expand the range of IR leading term coefficients to be $F_{23}, F_{33}, F_{4,3}\in [0,30]\times [0,30] \times[0,30]$, we find the allowed region is asymptotic to plane $F_{33} = F_{43}$, which is similar to the asymptotic behavior of allowed region in $\gamma_4, \beta_4$ plane showed in Fig.17 of \cite{Bobev:2016sh}.}}
+	\label{IRLarge}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[width=7cm]{053545}
+	\hfill
+	\includegraphics[width=7cm]{950595}
+	\caption{{\rm In the left panel, we set $F_{23},F_{33},F_{43} = 0.05, 0.35, 0.45$, we can see all the unknown functions are exponentially increasing, giving us asymptotic ${\rm AdS_8}$ on the boundary. In the right panel, we set $F_{23},F_{33},F_{43} = 0.95, 0.05, 0.95$, there're two functions $f_3(r), f_5(r)$ becomes zero at finite value of $r$, which gives singularity that we don't want.}}
+	\label{950595}
+\end{figure}	
+
+
+\begin{figure}[t]
+	\includegraphics[width=7cm]{LargeScale1}
+	\includegraphics[width=7cm]{LargeScale2}
+	
+	\includegraphics[width=7cm]{Right1}
+	\includegraphics[width=7cm]{Right2}
+	
+	\includegraphics[width=7cm]{UVRegion}
+	\caption{{\rm We can see the small region in IR space maps to a nearly two-dimensional subspace of UV space.}}
+	\label{UV}
+\end{figure}
+
+\begin{figure}[t]	
+	\includegraphics[width=7cm]{Branch31}
+	\includegraphics[width=7cm]{Branch32}
+	\includegraphics[width=7cm]{Branch33}
+	\includegraphics[width=7cm]{Branch34}
+	\caption{{\rm We can see the small region in IR space maps to a nearly two-dimensional subspace of UV space.}}
+	\label{Origin}
+\end{figure}
+
+Taking IR expansion coefficients as initial condition is, in fact, against the physical line of thought. What we should think is to firstly produce a squashed $S^7$ at infinity, which breaks the conformal symmetry of the QFT defined on the boundary, inducing an RG flow. We look the RG flow to expand, which is equivalent to looking $r$ goes to $0$ from infinity. However, for all possible squashed boundary on the UV side, which is determined by seven free parameters $\{\cF_{i0}, \cF_{j7}\}_{i = 2,3,4,5}^{j = 2,3,4}$, it's probable that for some choice of these parameters, the QFT defined on the boundary, under RG flow, will behave singularly hecause some of $f_i(r)$s have zero at finite $r$. Thus it's meaningful to find the allowed regions in the UV, too. All the GR allowed UV coefficients are obtained by matching the numerical solution we obtained using IR initial values in allowed region of Fig.\ref{IRRegion}, and they should be a three-dimensional subspace of seven-dimensional full space spanned by $\{\cF_{i0}, \cF_{j7}\}_{i = 2,3,4,5}^{j = 2,3,4}$.\footnote{Note: There's an alternative way to check the allowed region in UV parameter space, which is to take UV expansion as initial condition and numerically integrate the equations, which is supposed to give the same result. And compared to the method mentioned in the text, this method is conceptually simpler.} We're supposed to get a similar allowed space like in Fig.\ref{IRRegion}, but what we really care about is when the leading UV coefficients are the same, or just $\cF_{31} = \cF_{41} = \cF_{51} = 1/\sqrt{5} \cF_{21}$, the space deteriorates to trivial ${\rm AdS_8}$ or ${\rm AdS_8}$ with squashed Einstein $S^7$ at the boundary. So we need to explore which region do the allowed region in Fig.\ref{IRRegion} correspond to in the space of $(\cF_{20},\cF_{30},\cF_{40})$. 
+
+Consider the leading UV behavior:
+\be
+ds_{{\rm UV}}^2 = dr^2 + \# e^{2r} \left[\cF_{20}^2\left(d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2\right) + \cF_{(i+2)0}^2(\nu_i + (\cos\mu)\omega_i)^2\right]
+\ee
+
+Comparing it with standard $S^7$ metric:
+\be
+ds_{S^7}^2 = \frac{1}{4}\left(d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2 + \frac{1}{4} \sum\limits_{i=1}^3 (\nu_i + (\cos\mu)\omega_i)^2\right)
+\ee	
+
+We can absorb constant freely out of the bracket, so we can set $\cF_{20} = 1/2$, and see the allowed region in space $(\cF_{30},\cF_{40},\cF_{50})$. This maps from $R^3$ in Fig.\ref{IRRegion} to $R^3$ in Fig.\ref{UV}, at first glance all the points we take are mapped to two planes, but when look carefully, the distribution has a finite thickness. If we look more carefully, we'll find there's another branch near the original, all the samples points are green. The existence of the third branch indicates in the vicinity of spherical symmetric IR condition where $F_{23} = F_{33} = F_{43} = 1/12$, the corresponding UV coefficients are also at the vicinity of round AdS that $\cF_{30} = \cF_{40} = \cF_{50} = 1/2$. From Fig.\ref{Origin} we know there's only one IR point mapping to UV point which means the boundary is trivial $S^7$ or Einstein squashed $S^7$. {\textcolor{red}{The existence of the other two branches indicates the UV behaves sensitively to the changing of IR initial condition.}} For larger range of IR coefficients, the corresponding UV region is rather limited, there're two curves, one branch near the origin, and one branch below the origin. When looking carefully, the branch near the origin is allowed points, distributing in the vincinity of plane $\cF_{30} = \cF_{40}$; and the underneath branch, made up of mainly red points, is the same branch in Fig. \ref{UV}.
+
+	
+\subsection{Taub-Bolt IR expansion and numerical solution}
+
+	For squashed ${\rm AdS_4}$ in \cite{Bobev:2016sh}, we squashed $S^3$ to be $S^2\times S^1$, with symmetry group $SO(3)\times U(1)$. For squashed ${\rm AdS_8}$, we squash $S^7$ to be $S^4\times S^3$, with symmetry group $SO(5)\times SU(2)$.\cite{Nilsson:1984es} So we suppose Euclidean ${\rm AdS_8}$-Taub-Bolt space to have the topology of $R^4\times S^4$ near $r = 0$:
+\be
+	ds^2 = dr^2 + \#_1 \left(d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2  \right) + \frac{\lambda^2}{4}(r-r_0)^2\sum\limits_{i=1}^3 \#_{i+1}(\nu_i + (\cos\mu)\omega_i)^2
+\ee
+
+	So we make the expansion ansatz:
+\be
+	\begin{aligned}
+		&f_1(r) = 1&\\
+		&f_2(r) = F_{2j}(r-r_0)^j, j = 0,1,2,3,\cdots&\\
+		&f_i(r) = F_{ij}(r-r_0)^j, j = 1,2,3\cdots&\\
+		&F_{31} = F_{41} = F_{51} \equiv a > 0&\\
+	\end{aligned}
+\ee
+
+	The first order gives us $a = 1/2\lambda$, and the following terms are:
+\be
+	\begin{aligned}
+		f_2(r) = F_{20}-\frac{\rho ^2 \left(-7 F_{20}^2-3\right)}{8 F_{20}}-\frac{\rho ^4 \left(49 F_{20}^4+98 F_{20}^2+39\right)}{384 F_{20}^3}+\frac{\rho ^6}{46080 F_{20}^5}\\
+		%---------------------------
+		 \left(7 F_{20}^6 \left(1536 \lambda ^2 \left(F_{33}^2+F_{43}
+		F_{33}+F_{43}^2\right)+1127\right)\right.\\
+		%----------------------------
+	\left.	+3 F_{20}^4 \left(1536 \lambda ^2 \left(F_{33}^2+F_{43} F_{33}+F_{43}^2\right)+896 \lambda  (F_{33}+F_{43})+5047\right)\right.\\
+	%-------------------------------
+\left.	+F_{20}^2 (1152 \lambda 
+		(F_{33}+F_{43})+10465)+2475\right)+O\left(\rho ^7\right)\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+	f_3(r) = \frac{\rho }{2 \lambda }+\rho ^3 F_{33}+\frac{\rho ^5}{480 \lambda  F_{20}^2} \left(F_{20}^2 \left(576 \lambda ^2 \left(2 F_{33}^2-3 F_{43} F_{33}-3 F_{43}^2\right)-420 \lambda  F_{33}+49\right)\right.\\
+	%--------------------------
+\left.	-72 \lambda  (F_{33}+6
+		F_{43})+35\right)+O\left(\rho ^7\right)\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	f_4(r) = \frac{\rho }{2 \lambda }+\rho ^3 F_{43}+\frac{\rho ^5}{480 \lambda  F_{20}^2} \left(F_{20}^2 \left(-576 \lambda ^2\right.\right.\\
+	%---------------------------
+\left.\left.	 \left(3 F_{33}^2+3 F_{43} F_{33}-2 F_{43}^2\right)-420 \lambda  F_{43}+49\right)-72 \lambda  (6
+		F_{33}+F_{43})+35\right)+O\left(\rho ^7\right)\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+	f_5(r) = \frac{\rho }{2 \lambda }+\rho ^3 \left(-\frac{1}{4 \lambda  F_{20}^2}-F_{33}-F_{43}\right)\\
+	%--------------------------------
+	+\frac{\rho ^5}{480 \lambda  F_{20}^4} \left(F_{20}^4 \left(576 \lambda ^2 \left(2 F_{33}^2+7 F_{43} F_{33}+2 F_{43}^2\right)+420 \lambda 
+		(F_{33}+F_{43})+49\right)\right.\\
+		%--------------------------
+	\left.	+4 F_{20}^2 (162 \lambda  (F_{33}+F_{43})+35)+90\right)+O\left(\rho ^7\right)\\
+	\end{aligned}
+\ee
+	
+	The three Bolt-IR parameters are chosen to be $F_{20}, F_{33}, F_{43}$, now we do the numerical simulation to see the allowed region for Bolt-IR condition. There're also two kinds of solutions, shown in Fig.\ref{Bolt}.
+	
+\begin{figure}[h]
+	\includegraphics[width=7cm]{Bolt1}
+	\hfill
+	\includegraphics[width=7cm]{Bolt2}
+	\caption{{\rm In the left panel, we set $F_{20}, F_{33}, F_{43}= 1/5, 1/4, 1/3$, and in the right panel, we set $F_{20}, F_{33}, F_{43} = 1/5, 1/4, 9/10$. }}
+	\label{Bolt}
+\end{figure}
+
+	For different IR parameters $F_{20}, F_{33}, F_{43}$, the valid region is shown in Fig.\ref{IRBolt}. 
+	
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{IRBolt1}
+	\hfil
+	\includegraphics[width=7cm]{IRBolt2}
+	\caption{{\rm The validity of numerical solution determined by  $F_{20},F_{33},F_{43}$ in the full moduli space. Blue points correspond to valid space-time, and yellow points correspond to invalid space-time. The asymptotic plane, again, is $F_{33} = F_{43}$, so it looks similar to Fig.\ref{IRRegion}.}}
+	\label{IRBolt}
+\end{figure}
+	
+\subsection{correspondence between Riemann curvature scalar and validity of bolt UV parameter}
+
+	The line element of squashed seven sphere on the boundary is:
+\be
+	ds^2 = \left(d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2  \right) + \frac{1}{4}\sum\limits_{i=1}^3 \cF_{(i+2)0}^2(\nu_i + (\cos\mu)\omega_i)^2
+	\label{UVsquash1}
+\ee
+
+	The Riemann curvature scalar is:
+\be
+R = \cF_{30}^2 \left(-\frac{1}{2 \cF_{40}^2 \cF_{50}^2}-1\right)-\frac{\left(\cF_{40}^2-\cF_{50}^2\right)^2}{2 \cF_{30}^2 \cF_{40}^2 \cF_{50}^2}-\cF_{40}^2+\frac{1}{\cF_{40}^2}-\cF_{50}^2+\frac{1}{\cF_{50}^2}+12
+\ee
+
+\begin{figure}[h]
+	\includegraphics[width=5cm]{Rge0}
+	\includegraphics[width=5cm]{Rge04d}
+		\includegraphics[width=5cm]{Rge0p}
+	\caption{{\rm In the left panel is shown to be the UV parameter region that renders $R>0$. The right panel is corresponding region obtained in \cite{Bobev:2016sh}.}}
+	\label{Rge0}
+\end{figure}
+
+	The region where $R > 0$ is shown in the left panel of Fig.\ref{Rge0}, which is different from the result in \cite{Bobev:2016sh}, also shown in the right panel of \ref{Rge0}. The reason is in squashing \ref{UVsquash1}, the $S^4$ symmetry is preserved but in 4d case, the $S^2$ symmetry is broken. 
+	
+	But if we use a different squashing parameter, which breaks the $S^4$:
+	
+\be
+	ds^2 = a_1^2 \left(d\mu^2 +\frac{1}{4}\sin^2\mu \sum\limits_{i=1}^3 \omega_i^2  \right) + \frac{1}{4}\left((\nu_1 + (\cos\mu)\omega_1)^2 +  a_2^2(\nu_2 + (\cos\mu)\omega_2)^2 +a_3^2(\nu_3 + (\cos\mu)\omega_3)^2\right)
+\ee
+	
+	The curvature is
+\be
+	R = -\frac{a_2^2+a_3^2+1}{a_1^4}+\frac{12}{a_1^2}-\frac{a_2^4-2 a_2^2 \left(a_3^2+1\right)+\left(a_3^2-1\right)^2}{2 a_2^2 a_3^2}
+\ee	
+	
+	The allowed region is given in the third panel of Fig.\ref{Rge0}. It somehow looks similar to 4D case.
+	
+	\begin{figure}[h]
+		\includegraphics[width=5cm]{UVRegionBolt1}
+		\includegraphics[width=5cm]{UVRegionBolt2}
+		\includegraphics[width=5cm]{UVRegionBolt3}
+		\includegraphics[width=6cm]{UVRegionBoltNUT1}
+		\caption{{\rm The first three plots: UV coefficients for Bolt geometry. The last plot: comparison of positive curvature squashing of seven-sphere(yellow), UV allowed region for Bolt(black), and UV allowed region for NUT(blue). The two red points indicate round seven-sphere and squashed seven-sphere.}}
+		\label{UVRegionBolt}
+	\end{figure}	
+		
+The UV corresponding region, is shown in Fig.\ref{UVRegionBolt} Compare the region where squashed seven-sphere has a positive curvature and the region of UV coefficients corresonding to a non-singular geometry interpolating between UV and IR, we find they are very close.	And from the last panel in Fig. \ref{UVRegionBolt} we can easily find the solution that interpolates between Bolt in IR and round sphere in UV where $\cF_{30} = \cF_{40} = \cF_{50} = \cF_{20} = 1/2$, and the one that interpolates between NUT in IR and squashed sphere in UV where $\cF_{30} = \cF_{40} = \cF_{50} = \cF_{20}/\sqrt{5} = 1/(2\sqrt{5})\approx 0.22$.
+		
+\subsection{double-boundary solutions}
+Since we fail to find a double-boundary solution that interpolates a round sphere and a squashed sphere for our third metric ansatz, we are looking for the solutions here. Of course, for this ansatz we have a lot more freedom to choose IR conditions, e.g., whether $f_2(0), f_3(0), f_4(0), f_5(0)$ are zeros or not. So we start by the most general case, dubbed the Taub-Vase space, with the topology of $R\times S^7$ at the origin. Through solving Einstein equations by IR expansion, we have:
+\be
+\begin{aligned}
+	&f_2(r) = F_{20}-\frac{1}{12 F_{20}^2
+		F_{30}^2 F_{40}^2 F_{50}^2}\left(4 F_{20}^3 F_{30} F_{40} F_{50} (F_{30} F_{40}
+		F_{51}+F_{30} F_{41} F_{50}+F_{31} F_{40} F_{50}) +\sqrt{2}
+		\sqrt{A}\right) r + O(r^2)&\\
+	&f_3(r) = F_{30} + F_{31}r + O(r)^2&\\
+	&f_4(r) = F_{40} + F_{41}r + O(r)^2&\\
+	&f_5(r) = F_{50} + F_{51}r + O(r)^2&\\
+		&A = F_{20}^6 \left(-F_{30}^2\right) F_{40}^2 F_{50}^2 \left(3 F_{30}^4-2
+	F_{30}^2 \left(F_{40}^2 \left(126 F_{50}^2+4 F_{51}^2+3\right)+2
+	F_{40} F_{41} F_{50} F_{51}\right.\right.&\\
+	&\quad \left.\left.+\left(4 F_{41}^2+3\right)
+	F_{50}^2\right)-4 F_{30} F_{31} F_{40} F_{50} (F_{40}
+	F_{51}+F_{41} F_{50})-2 \left(4 F_{31}^2+3\right) F_{40}^2
+	F_{50}^2+3 F_{40}^4+3 F_{50}^4\right)& \\ 
+	&\quad +72 F_{20}^4 F_{30}^4
+	F_{40}^4 F_{50}^4-6 F_{20}^2 F_{30}^4 F_{40}^4 F_{50}^4
+	\left(F_{30}^2+F_{40}^2+F_{50}^2\right)&	\\
+\end{aligned}
+\ee
+
+	Thus there're at most seven free parameters that determines a solution, which are $\{F_{i0},F_{j1}\}_{i=2,3,4,5}^{j=3,4,5}$.
+		
+\section{the third metric ansatz}
+\subsection{reduce and solve Einstein equations}
+	Consider the metric ansatz
+\be
+	\begin{aligned}
+		&ds^2 = dr^2 + a^2(r) \left(d\mu^2 + \frac{1}{4}\sin^2\mu \,\Sigma_i^2\right) + b^2(r) (\sigma_i - A^i)^2 ,\quad i = 1,2,3&\\
+		&A^i = \cos^2\frac{\mu}{2}\, \Sigma_i&\\
+	\end{aligned}
+\ee
+
+	which comes from the other expression \ref{nextDs2} of squashed-seven-sphere. where $\sigma_i$s are left-invariant 1-forms of SU(2), and $A^i$ are connection coefficients on {\textcolor{red}{the original manifold}}.\cite{Bizon:2007ss}\cite{Page:1985lb} basis space $S^4$. The reason why we choose an overall $b(r)$ is because were we not, the Einstein equations aren't diagonal and contain $\mu$ and $r$, which breaks the symmetry of $S^4$.
+	
+	The Einstein equations reduce to
+\be
+\begin{aligned}
+	-16 a^3 b a' b'-8 a^2 b^2 a'^2-4 a^4 b'^2+28 a^4 b^2+8 a^2 b^2+a^4-2 b^4 = 0\\
+	-4 a b^2 a''-12 a b a' b'-4 b^2 a'^2-4 a^2 b b''-4 a^2 b'^2+28 a^2 b^2+a^2+4 b^2 = 0\\
+	16 a^3 b^2 a''+32 a^3 b a' b'+24 a^2 b^2 a'^2+8 a^4 b b''+4 a^4 b'^2-84 a^4 b^2-24 a^2 b^2-a^4+10 b^4 = 0\\
+\end{aligned}
+\label{EinsteinEquations3}
+\ee
+	\subsubsection{IR expansion}
+	Same as previous ansatz \ref{ansatz2}, IR expansion for \textbf{NUT} has two distinct solutions, one of them is exactly the same as \ref{branch1ansatz2IR}:
+\be
+	a(r) = \frac{3\sqrt{5}}{10} \sinh(r),\quad b(r) = \frac{3}{10}\sinh(r)
+\ee
+
+	And the other is 
+\be
+\begin{aligned}
+	a(r) = \frac{r}{2}+a_3 r^3+\frac{\left(-14832 a_3^2+1932 a_3-49\right) r^5}{2160}+\frac{1}{816480}\left(44570304 a_3^3-7822224 a_3^2\right.\\
+	\left.+434448 a_3-7595\right)
+		r^7 + O\left(r^9\right)\\
+	b(r) = \frac{r}{2}+\left(\frac{7}{36}-\frac{4 a_3}{3}\right) r^3+\frac{\left(71424 a_3^2-9744 a_3+343\right) r^5}{6480}+\frac{1}{816480}\left(-83054592 a_3^3\right.\\
+	\left.+15344640
+		a_3^2-906192 a_3+17101\right) r^7+O\left(r^9\right)\\
+\end{aligned}	
+\ee
+
+	Where $a_3$ is the only free parameter, and once chosen to be $1/12$, gives $a(r) = b(r)$. 
+	
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{ansatz3NUTUVIR}
+	\hfil
+	\includegraphics[width=7cm]{ansatz3BoltUVIR}
+	\includegraphics[width=7cm]{ansatz3NUTUVIR2}
+	\caption{{\rm Left: the relation between $b(r)/a(r)$ at UV and $a_3$, the horizonal line indicates $1/\sqrt{5}$, we can easily see that both round sphere and squashed sphere can be mapped to NUT at IR. Right: The ratio for Bolt, the horizonal line is $1/\sqrt{5}$.}}
+	\label{ansatz3NUTUVIR}
+\end{figure}
+	
+	And for \textbf{Bolt} at IR, the expansion gives
+	
+\be
+\begin{aligned}
+	a(r) = a_0-\frac{\left(-7 a_0^2-3\right) r^2}{8 a_0}-\frac{\left(49 a_0^4+98 a_0^2+39\right) r^4}{384 a_0^3}-\frac{\left(-7889 a_0^6-15141
+		a_0^4-10241 a_0^2-2379\right) r^6}{46080 a_0^5}+O\left(r^8\right)\\
+	b(r) = \frac{r}{2}-\frac{r^3}{12 a_0^2}-\frac{\left(-49 a_0^4-70 a_0^2-26\right) r^5}{480 a_0^4}-\frac{\left(10290 a_0^6+20531 a_0^4+14000
+		a_0^2+3224\right) r^7}{80640 a_0^6}+O\left(r^9\right)\\
+\end{aligned}
+\ee
+
+	There's also only one free paramter $a_0$, interestingly, we can't let $a_0 = 0$, which corresponds to NUT case exactly. We can see for all values of $a_0$, the solutions are always non-singular, that's because our squashing parameter is the same as setting $f_3(r) = f_4(r) = f_5(r)$, which always lies in valid region no matter for NUT or for Bolt.
+	
+	\subsubsection{UV expansion}
+	Making the same UV ansatz:
+\be
+\begin{aligned}
+	a(r) = e^r A_0 + A_1 + e^{-r}A_2 + \cdots\\
+	b(r) = e^r B_0 + B_1 + e^{-r}B_2 + \cdots\\
+\end{aligned}
+\ee
+	
+	, the full UV expansion is determined by three free parameters, which are chosen to be $A_0, B_0, A_7$, and the first several terms are:
+\be
+\begin{aligned}
+		a(r) = A_0 e^r + e^{-r} \left(\frac{B_0^2}{8 A_0^3}+\frac{A_0}{80 B_0^2}-\frac{1}{5 A_0}\right)+\frac{e^{-3 r} \left(-2 A_0^6 B_0^2-39 A_0^4 B_0^4+140 A_0^2 B_0^6+A_0^8-100 B_0^8\right)}{1600A_0^7 B_0^4} \\
+	b(r)=B_0 e^r + \frac{e^{-r} \left(-\frac{10 B_0^4}{A_0^4}+\frac{8 B_0^2}{A_0^2}-3\right)}{80 B_0}-\frac{e^{-3 r} \left(-2 A_0^6 B_0^2-39 A_0^4 B_0^4+140 A_0^2 B_0^6+A_0^8-100 B_0^8\right)}{1200A_0^8 B_0^3}\\
+\end{aligned}
+\ee
+
+	\subsubsection{interpolating between IR and UV}
+For a given IR parameter, namely, $a_3$ for NUT or $a_0$ for Bolt, we can integrate towards UV and calculate $b(r)/a(r)$, the result is shown in the left panel of Fig.\ref{ansatz3NUTUVIR}. According to the metric on the boundary:
+\be
+	ds^2 = d\mu^2 + \frac{1}{4}\sin^2\mu \Sigma_i^2 + M(\sigma_i-\cos^2\frac{\mu}{2}\Sigma_i)^2,\quad M = \frac{B_0^2}{A_0^2}
+\ee
+
+	The Ricci scalar $\cR = \frac{3}{2M^2}(-2M^4 + 8M^2 + 1)$ is nagetive only if $M > \sqrt{\frac{1}{2}(4+3\sqrt{2})}\approx 2.03$, which correspond to part of the region $a_3<0$. The figure also shows that for one UV squashing, there's only one IR geometry it maps to, which means the analogue of Hawking-Page transition\cite{Hawking:1983ss} doesn't exist for out metric ansatz.
+
+		
+\subsection{interpolating solution}
+	We are looking for a solution that interpolates round sphere and squashed sphere on the boundary. 
+	
+	\subsubsection{numerical trials}
+We assume the space has the following properties:
+\be
+\begin{aligned}
+ \lim\limits_{r\rightarrow +\infty}\frac{b(r)}{a(r)} = \frac{1}{\sqrt{5}}\\
+ \lim\limits_{r\rightarrow 0}\frac{b(r)}{a(r)} = 1\quad {\rm and}\quad a(0) = a_0 > 0\\
+ \lim\limits_{r\rightarrow -\infty}\frac{b(r)}{a(r)} = 1\\
+\end{aligned}
+\ee
+
+	The second property means the space looks like $\mathbb{R}\times \mathbb{S}^7$ near the origin. 
+	
+	To see the initial condition, we first solve the equations by IR expansion. Because the non-linearity of Einstein equations, we can't change $a_0$ to be any number we want, so there're two free parameters in IR expansion, which can be chosen to be $(a_0, a_1)$. But since $\lim\limits_{r\rightarrow +\infty}a(r) = \lim\limits_{r\rightarrow -\infty}a(r) = \infty$, there must exist a point $r_*$ so that $a'(r_*) = 0$, which we can move to $r_* = 0$; the same for $b(r)$, there is an $r'_*$ that $b'(r'_*) = 0$, which we can't set to be the same as $r_*$.
+
+
+	
+	To be more specific, we make the ansatz of $a, b$ in the IR:
+	
+\be
+\begin{aligned}
+	a(r) = a_0 + a_1 r + a_2 r^2 + \cdots\\
+	b(r) = b_0 + b_1 r + b_2 r^2 + \cdots\\
+	a_1 = 0\\
+\end{aligned}
+\ee
+
+	After solving the Einstein equations \ref{EinsteinEquations3}, we get
+\be
+\begin{aligned}
+	a(r) = a_0 + \frac{6a_0^2+14a_0^4 -3b_0^2}{4a_0^3}r^2 + \frac{\left(14 a_0^4+6 a_0^2-b_0^2\right) \sqrt{a_0^4 \left(28 b_0^2+1\right)+8 a_0^2 b_0^2-2 b_0^4}}{8 a_0^5 b_0}r^3 + O(r^4)\\
+	b(r) = b_0 -\frac{\sqrt{a_0^4 \left(28 b_0^2+1\right)+8 a_0^2 b_0^2-2 b_0^4}}{2 a_0^2}r + b_0\left(-\frac{7}{2}-\frac{2}{a_0^2} + \frac{b_0^2}{a_0^4}\right)r^3+O(r^4)\\
+\end{aligned}
+\ee
+
+	\textbf{After trials, it seems this kind of solution doesn't exist. Even if we try cases where $a(0)\ne b(0)$. } Even for Bolt family, the solution doesn't exist because all Bolt solutions have certain parity, which can't satisfy the different limit of $a(r)/b(r)$ at infinity. Also note that cases where $a_0 = 0$ but $b_0\ne 0$ doesn't exist.
+	
+\subsubsection{analytic trials}
+
+	It's highly complicated to solve Einstein equations analytically, the authors of \cite{Bizon:2007ss} tried to solve out $a(r), b(r)$ analytically for $\Lambda=0$ but failed; and adding the cosmological constant makes the equations dependent to $r$ explicitly, only complicating the condition. 
+	
+	Again, for $\Lambda = 0$ case, the authors of \cite{Gibbons:1990rb} found one special solution where the coefficient before $dr^2$ is non-trivial:
+\be
+	ds^2 = \left(1-\left(\frac{m}{r}\right)^{10/3}\right)^{-1} dr^2 + \frac{9}{20}r^2 ds^2_{\mathbb{S}^4} + \frac{9}{100}r^2  \left(1-\left(\frac{m}{r}\right)^{10/3}\right)(\sigma_i-A_i)^2
+\ee
+
+	where $m$ is a random parameter. This metric is valid for $r > m$, and goes to squashed sphere at boundary. \cite{Gukov:2001sm} Also, a generalization, which takes $S^3$ to be a squashing $S^1$ bundled over $S^2$ is provided in \cite{Cvetic:2001sm}. \textbf{Theoretically speaking, finding the generalization to asymptotically AdS would be possible.}
+	
+
+\subsection{On-shell action for Bulk}
+
+	In this section we follow the steps of \cite{Bobev:2016sh} to look for analogous Hawking-Page transition between NUT and Bolt, where the main technique is to use counterterm to cancel the infinity in the original action:\cite{Bobev:2016sh}\cite{Emparan:1999ac}\cite{Mann:1999se}:\footnote{All the Newton constant $G$ we're writting here are refered to $G_8$, which we set to be one.}\footnote{About the coefficient ahead of the action, the discussion is in \cite{Robinson:2006sd}.}
+\be
+	S_{\rm bulk} + S_{\rm bdy}= -\frac{1}{16\pi G}\int_{\cM} d^{n+1}x\sqrt{g}\left(R -2\Lambda\right) - \frac{1}{8\pi G}\int_{\partial\cM} d^n x\sqrt{h}K
+\ee
+
+	Where $d = n+1$ is the space-time dimension, $R$ is the scalar curvature in $d-$dim space-time, cosmological constant is $\Lambda = -\frac{n(n-1)}{2l^2}$, $h_{ab}$ is the induced-metric on the boundary, defined as $h_{\alpha\beta} := g_{\alpha\beta}-(N\cdot N) N_{\alpha}N_\beta$, $h:= {\rm det}(h_{ab})$, and $K$ is the trace of extrinsic curvature tensor on the boundary, which is defined as $K_{\alpha\beta}:=h_\alpha^{\,\gamma}h_{\beta}^{\,\delta}\nabla_\gamma N_\delta$,  $N_\alpha$ is the unit normal vector of the boundary.\cite{Blau:2019gr}\footnote{{\textcolor{red}{From now on, let's use latin letters $i,j,k,\cdots$ to indicate indices in 3-d, and $\mu,\nu,\rho,\cdots$ for 4-d; $a,b,c,\cdots$ for 7-d, $\alpha,\beta,\gamma,\cdots$ for 8-d, and $A,B,C,\cdots$ for 11-d.}}} The second term above is the famous Hawking-Gibbons term that makes the action works for finite space-time.\cite{Hawking:1977qg} 
+	
+	The counterterm is closely related to anomalies in AdS/CFT duality\cite{Papadimitriou:2016hr}, and can be calculated systematically according to\cite{Henningson:1998wa}.\footnote{The relation between EE and anomaly see \cite{Hughes:2015ai}.} The number of terms in the counter-term increases with dimension, the first several orders for $d<9$ are:\cite{Emparan:1999ac}\cite{Bobev:2016sh}\cite{Clarkson:2002}
+\be
+\begin{aligned}
+		S_{\rm ct} = \frac{1}{8\pi G} \int_{\partial \cM} d^d x\sqrt{h}\left[(d-1) + \frac{1}{2(d-2)}\cR + \frac{1}{2(d-4)(d-2)^2}\left(\cR_{ab}\cR^{ab}-\frac{d}{4(d-1)}\cR^2\right)\right.\\
+\left.		+\frac{1}{(d-2)^3(d-4)(d-6)}\left(\frac{3d+2}{4(d-1)}\cR \cR_{ab}\cR^{ab}-\frac{d(d+2)}{16(d-1)^2}\cR^3 - 2\cR^{ab}\cR^{cd}\cR_{acbd}\right.\right.\\ \left.\left.-\frac{d}{4(d-1)}\nabla_a\cR\nabla^a \cR +\nabla^c\cR^{ab}\nabla_c\cR_{ab}\right) + \cdots\right]
+\end{aligned}
+\ee
+
+	where $\cR_{abcd}, \cR_{ab}, \cR$ are the Riemann tensor, Ricci tensor, Ricci scalar of the boundary. The diverging part of $S_{\rm bdy} + S_{\rm bulk}$ is:
+\be
+\begin{aligned}
+	S_{\rm bdy} + S_{\rm bulk} = \frac{B_0\pi^3}{G}\left[-32 A_0^4 B_0^2 e^{7 r}+\frac{6}{5} e^{5 r} \left(8 A_0^2 B_0^2+A_0^4-2 B_0^4\right)\right.\\
+	+\frac{1}{600} e^{3 r} \left(\frac{100
+		B_0^6}{A_0^4}-\frac{160 B_0^4}{A_0^2}+\frac{A_0^4}{B_0^2}-112 A_0^2-4 B_0^2\right)\\
+\left.	+\frac{e^r }{9600}\left(\frac{11000
+			B_0^8}{A_0^8}-\frac{23200 B_0^6}{A_0^6}+\frac{13900 B_0^4}{A_0^4}-\frac{1504 B_0^2}{A_0^2}-\frac{40
+			A_0^2}{B_0^2}-\frac{7 A_0^4}{B_0^4}-2774\right)+O\left(e^{-r}\right)\right]
+\end{aligned}
+\ee
+	
+	which cancels exactly with $S_{\rm ct}$, giving a finite result. The numerical calculation of $S_{\rm ren}$ as a function of UV squashing $B_0/A_0$ is shown in Fig.\ref{Sren}. Plus, as $B_0/A_0$ goes to 0, $S_{\rm ren}$ is diverging, which is the same as\cite{Bobev:2016sh}.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{SrenNUT}
+	\hfil
+	\includegraphics[width=7cm]{SrenBolt}
+	\caption{{\rm The plots show the relation between on-shell action and UV squashing quantity $B_0/A_0$ for NUT and Bolt respectively, which turns out to be monotonously decreasing as the squashing intenses as a whole.}}
+	\label{Sren}
+\end{figure}
+
+	The case where the boundary is given by a round sphere is ususally a extremal for the partition function where there's no SUSY\cite{Bobev:2017pf}. The numeric value clearly shows the same result. Nonlinear fit near the extremal point in pattern $y = \frac{2\pi^3}{15}+b(x-1)^2+c(x-1)^3$ gives us(see Fig.\ref{Sren2})
+\be
+	S_{{\rm ren}} = \frac{2\pi^3}{15} - 199.99 \delta^2 - 1505.32 \delta^3,\quad \delta \equiv \frac{B_0}{A_0}-1
+\ee
+
+	There're two cases where the on-shell action can be calculated analytically: when the boundary is Einstein, they are $\left(1, \frac{2\pi^3}{15}\right), \left(\frac{1}{\sqrt{5}}, \frac{2\cdot 3^6 \pi ^3}{5^6}\right)$. More accurate analysis near the $\tilde{S}^7$ fixed point, which is less understood before, shows that there're two extremum, shown in Fig.\ref{BoltSideExt}.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{NUTFull}
+	\hfil
+	\includegraphics[width=7cm]{NUTFit2}
+	\caption{{\rm Left panel: The renormalized action has a local maximum when the boundary is a round sphere. Right: The numerical fitting around the extremum, where the red numerical point on the apex is for round sphere on the boundary.}}
+	\label{Sren2}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=7cm]{BoltSideExt}
+	\hfil
+	\includegraphics[width=7cm]{NUTSideExt}
+	\caption{{\rm Here we show $S_{\rm ren}$ near fixed point $\tilde{S}^7$(shown in yellow point), who has two extremum in Bolt and NUT side respectively.}}
+	\label{BoltSideExt}
+\end{figure}
+
+\subsection{comparison with the literature}
+	\subsubsection{central charge $C_T$}
+In our convention, the central charge is defined by the two-point function of stress tensor for CFT in $\mathbb{R}^d$:\footnote{While our convention is the same as in\cite{Bobev:2017pf}, in \cite{Bueno:2018pf}\cite{Buchel:2010ad} the stress tensor correlation function is defined as
+	\be
+	\langle T_{ab}(x)T_{cd}(0) \rangle = \frac{C_T}{x^{2d}}\cI_{ab,cd}
+	\ee
+	
+	And our scale of partition function is the same as \cite{Bueno:2018pf} while differs with \cite{Buchel:2010ad} by $S_{\rm ours} = \frac{1}{8\pi} S_{\rm BEMPSS}$, thus $C_T^{\rm ours} = \cS_{d-1}^2 C_T^{\rm BCHM} = \frac{ \cS_{d-1}^2}{8\pi}C_T^{\rm BEMPSS} =\frac{\pi ^{\frac{d}{2}-1} \Gamma (d+2)}{2 (d-1) \Gamma \left(\frac{d}{2}\right)^3} $.
+}
+
+\be
+\begin{aligned}
+	\langle T_{ab}(x)T_{cd}(0)\rangle_{\mathbb{R}^d} = \frac{1}{\cS_{d-1}^2}\frac{C_T}{|x|^{2d}}\cI_{ab,cd}(x),\quad \cS_{d-1} = \frac{2\pi^{d/2}}{\Gamma(d/2)}\\
+	\cI_{ab,cd}(x) = \frac{1}{2}(I_{ac}(x)I_{bd}(x)+I_{ad}(x)I_{bc}(x)) - \frac{1}{d}\delta_{ab}\delta_{cd},\quad I_{ab} = \delta_{ab}-\frac{2x_ax_b}{|x|^2}.\\
+\end{aligned}
+\label{TTRd}
+\ee
+
+This relation is totally dictated by conformal symmetry and energy conservation\cite{Erdmenger:1996gd}. For vacuum AdS, the central charge is 
+
+\be
+C_T = \frac{\pi ^{\frac{d}{2}-1} \Gamma (d+2)}{2 (d-1) \Gamma \left(\frac{d}{2}\right)^3}
+\ee
+
+which reproduces \cite{Bobev:2017pf} for $d=3,5$ as special cases.
+
+\subsubsection{bulk partition function for round sphere}	
+Compare our results with \cite{Khodam:2009eg}\cite{Cano:2019hh} for round sphere. Our analytic result corresponds to eqn. (7.44)(9.11) and (G.3) of \cite{Cano:2019hh} but \textcolor{red}{different from} eqn. (58) of \cite{Khodam:2009eg}.
+
+	\subsubsection{change squashing parameter}
+	Let's rewrite $\frac{B_0}{A_0}\equiv k$ and transfer it through $k\rightarrow k(\epsilon)$, we're looking forward to a new squashing senario $\epsilon$ which can make all higher order terms vanishes. Thus we only care about the behavior of $S_{\rm ren}$ near its extremum $k=k_0$ that $S'(k_0) = 0$, thus we have:
+\be
+\begin{aligned}
+	&\frac{d}{d\epsilon}S(k(\epsilon)) = S'(k_0)k'(\epsilon_0) = 0&\\
+	&\frac{d^2}{d\epsilon^2}S(k(\epsilon)) = S''(k_0)(k'(\epsilon_0))^2 + S'(k_0)k''(\epsilon_0) = S''(k_0)(k'(\epsilon_0))^2&\\
+\end{aligned}
+\ee	
+
+	Consider similar squashing senario as in \cite{Bobev:2017pf}:(remember our agreement of indices.)
+\be
+	g_{ab} = g_{ab}^0 + \epsilon h_{ab},\quad g_{ab}^0 = g_{ab}\Big|_{\epsilon=0}
+\ee
+	
+	we find the transformation between two squashing parameters is $\epsilon = k^2-1$. And $S_{\rm ren}$ doesn't look like parabola even in terms of $\epsilon$. 
+	
+	In our specific case, we take $\epsilon(\delta) = \delta^2+2\delta$, thus
+\be
+	\frac{d^2}{d\delta^2}S(\epsilon(\delta)) = S''(\epsilon_0)(\epsilon'(\delta_0))^2\ \Rightarrow \ S''(\epsilon_0) = \frac{\partial_\delta^2S(\epsilon(\delta))}{(\epsilon'(\delta_0))^2} \approx -100.00
+\ee
+
+	By comparing with \cite{Bueno:2018pf}, we guess the second derivative is $S''(\epsilon_0)=-\frac{8}{5}\pi^3\approx -49.61$.
+
+	
+	\subsubsection{second order derivative}
+	
+	The partition function of a general CFT on $d$-dimension manifold $\cM$ with the metric is given by:
+\be
+	Z = \int \cD \varphi\; e^{-S[\varphi,g_{ab}]},\quad F \equiv -\ln Z
+\ee
+	
+	The action $S[\varphi,g_{ab}]$ can be expanded under squashing of metric $g_{ab} = g_{ab}^{(0)} + \epsilon h_{ab}$. The action can be expanded as
+\be
+\begin{aligned}
+		S[g_{ab}] = S[g_{ab}^{(0)}] -\frac{\epsilon}{2}\int d^dx \sqrt{g^{(0)}(x)}h^{ab}(x)T_{ab}(x)\\
+		 - \frac{\epsilon^2}{4}\int d^dx\sqrt{g^{(0)}(x)}\left[\frac{h(x)}{2}h^{ab}(x)T_{ab}(x)+\int d^dy \sqrt{g^{(0)}(y)}h^{ab}(x)h^{cd}(y)\frac{\delta T_{ab}(x)}{\sqrt{g^{(0)}(y)}\delta g^{cd}(y)}\right]
+\end{aligned}
+\ee
+
+	The second derivative of free energy $F(\epsilon)$ is:
+\be
+	F''(\epsilon)\Big|_{\epsilon=0} = -\frac{1}{4}\int d^dx d^dy\sqrt{g^{(0)}(x)g^{(0)}(y)} h^{ab}(x)h^{cd}(y)\langle T_{ab}(x)T_{cd}(y)\rangle_\cM
+\ee
+
+	One point function in odd-dimension CFT vanishes. Take a conformal mapping $f:\cM\rightarrow \mathbb{R}^d$ which relates the line element as $f^*(ds^2_\cM) = \Omega^2(x)ds^2_\cM$, in odd dimensions, the stress tensors are transformed through
+\be
+	T_{ab}(x) = \Omega^{d-2}M^{\bar{a}\bar{b}}_{ab}T_{\bar{a}\bar{b}}(X),\quad {\rm where} \ M^{\bar{a}\bar{b}}_{ab}\equiv \frac{\partial X^{\bar{a}}}{\partial x^a}\frac{\partial X^{\bar{b}}}{\partial x^b}
+\ee
+	
+	where we use $X^{\bar{a}}$ to indicate coordinates on $\mathbb{R}^d$ and $x^a$ to indicate coordinates on $\cM$. In our convention of $\langle TT \rangle_{\mathbb{R}^d}$\ref{TTRd}, we have
+\be
+\small
+		F''(\epsilon)\Big|_{\epsilon=0} = \frac{-C_T}{4\cS_{d-1}^2}\int d^dx d^dy\sqrt{g^{(0)}(x)g^{(0)}(y)}\left[h^{ab}(x)h^{cd}(y)\Omega^{d-2}(x)\Omega^{d-2}(y)M_{ab}^{\bar{a}\bar{b}}(x)M_{cd}^{\bar{c}\bar{d}}(y)\frac{\cI_{\bar{a}\bar{b},\bar{c}\bar{d}}(X-Y)}{|X-Y|^{2d}}\right]
+\label{MasterIntegral}
+\ee
+	
+	which means we're actually still doing the integral on $\cM$ instead of $\mathbb{R}^d$. There'll be, of course, divergence coming from the $1/{(X-Y)}$ term of the integrand, which is partly discussed in \cite{Klebanov:2011fs}.
+	
+	First let's evaluate the integral in eqn.(17) of \cite{Klebanov:2011fs}, the hint is given in \cite{Cardy:1988fd} that to evaluate the integral using Feynman parametrization, according to the most general formula which is supposed to be correct for $n_i\notin \mathbb{Z}$:\footnote{Because the formula is proved for all positive integers $n_i$, according to the notion of analytic continuation, as long as the function doesn't diverge along the imagary axis, this is correct.} 
+
+\be
+\frac{1}{\prod_{i=1}^{n}A_i^{n_i}} = \int_{[0,1]^n}\left(\prod_{i=1}^{n}dx_i\right)\frac{\delta\left(\Sigma_{i=1}^{n}x_i-1\right)\Gamma(\Sigma n_i)\prod_{i=1}^{n}x^{n_i-1}}{\left(\sum_{i=1}^{n}x_iA_i\right)^{\sum n_i}\prod_{i=1}^n\Gamma(n_i)}
+\ee
+
+	thus in \cite{Klebanov:2011fs}
+\be
+	I_2 = \int \sqrt{g(x)}d^dx\int\sqrt{g(y)}d^dy \langle \cO(x)\cO(y)\rangle_{\rm CFT} = \int d^dxd^dy(2a)^{2\epsilon}\frac{1}{(1+x^2)^\epsilon (1+y^2)^\epsilon (|x-y|^2)^{d-\epsilon}}
+\ee
+
+	After that, we use Feynman parametrization and then transform the coordinate in a better form:
+\be
+\begin{aligned}
+	I_2 = (2a)^{2\epsilon}\int d^dxd^dydx_1dx_2dx_3 \delta(x_1+x_2+x_3-1)\frac{\Gamma(d+\epsilon)x_1^{\epsilon-1}x_2^{\epsilon-1}x_3^{d-\epsilon-1}}{ [\;\cdot\;]^{d+\epsilon}\Gamma(\epsilon)^2\Gamma(d-\epsilon)}\\
+	 [\;\cdot\;] = x_1(1+x^2) +x_2(1+y^2) + x_3|x-y|^2
+\end{aligned}
+\ee
+
+	Because of the cross term in $[\;\cdot\;]$, we make a coordinate transformation:
+
+\be
+[\;\cdot\;] = \sum_{i=1}^{d}\left[(x_1+x_3)x_i^2 + (x_2+x_3)y_i^2 - 2x_3x_iy_i+\frac{x_1+x_2}{d}\right] = \sum_{i=1}^d [F_1(Ax_i+By_i)^2 + F_2(Bx_i - Ay_i)^2 + C]
+\ee
+	
+	which solves as:
+\be
+\begin{aligned}
+	&F_1 = \frac{x_2 \left(\sqrt{(x_1-x_2)^2+4x_3^2}-x_3\right)+x_3\left(\sqrt{(x_1-x_2)^2+4 x_3^2}-2x_3\right)+x_1 (x_2+x_3)-x_2^2}{2\sqrt{(x_1-x_2)^2+4 x_3^2}}&\\
+	&F_2 = \frac{x_1^2+x_1 \left(\sqrt{(x_1-x_2)^2+4x_3^2}-x_2+x_3\right)+x_3
+		\left(\sqrt{(x_1-x_2)^2+4 x_3^2}-x_2+2x_3\right)}{2 \sqrt{(x_1-x_2)^2+4x_3^2}}&\\
+	&A = \frac{\sqrt{(x_1-x_2)^2+4x_3^2}-x_1+x_2}{2 x_3}&\\
+&	B = 1&\\
+	&C = \frac{x_1+x_2}{d}&\\
+\end{aligned}
+\ee
+
+	We can then do the coordinate transformation\footnote{It can be checked that $F_1, F_2$ above are positive for all $(x_1, x_2, x_3)\in [0,1]^3$.}
+
+\be
+\left\{
+\begin{aligned}
+	\xi_i = \sqrt{F_1}(Ax_i+y_i)\\
+	\eta_i = \sqrt{F_2}(x_i - Ay_i)\\
+\end{aligned}
+\right.
+\ee
+
+	and the Jacobian
+\be
+\begin{aligned}
+	&J = \prod_i J_i&\\
+	&J_i \equiv	\frac{\partial(\xi_i, \eta_i)}{\partial(x_i,y_i)} =\frac{\left((x_1-x_2)\left(\sqrt{(x_1-x_2)^2+4x_3^2}-x_1+x_2\right)-4x_3^2\right)}{2\sqrt{2} x_3^2}\sqrt{\;\cdot\;}&\\
+&\sqrt{\;\cdot\;} = \sqrt{\frac{(x_1 (x_2+x_3)+x_2 x_3)\left((x_1-x_2)\left(\sqrt{(x_1-x_2)^2+4x_3^2}+x_1-x_2\right)+2x_3^2\right)}{(x_1-x_2)^2+4 x_3^2}}&
+\end{aligned}
+\ee
+
+	It's not hard to do the integral $\int d^d \xi d^d \eta \frac{1}{\left(\xi^2+\eta^2 +x_1+x_2\right)^{d+\epsilon}}$ and $\int_0^1dx_3$ because of the $\delta$ function, which gives us:
+\be
+	I_2 =\frac{\pi ^d (2a)^{2 \epsilon } }{\Gamma (\epsilon ) \Gamma (d-\epsilon )} \int dx_1dx_2 \frac{ 
+		 (-x_1-x_2+1)^{d-\epsilon -1} \theta (1-x_1-x_2) }{((1-x_1) x_1-x_2 (x_1+x_2-1))^{d/2}(x_1 x_2)^{1-\epsilon}(x_1+x_2)^{\epsilon } }
+\ee
+
+	It's obvious the integrand is divergent when $x_1$ or $x_2$ are at vicinity of 0, for small $\epsilon$. \textcolor{red}{One hint to reduce the divergence should come from the 2-loop integrals in QFT, in e.g., \cite{Grozin:2005qq}.}
+	
+	The next trick we take, is to change the coordinate $(x_1, x_2)$ through:
+
+\be
+\left\{
+\begin{aligned}
+	x_1 = r \sin^2\theta\\
+	x_2 = r \cos^2\theta\\
+\end{aligned}
+\right.
+\ee
+
+	And change the integral $\int_0^1\int_0^{1-x_2}dx_1dx_2 = \int_0^1rdr\int_0^{\pi/2}\sin2\theta d\theta$, we reproduce Pufu's result without producing any divergence:
+\be
+	I_2 = \frac{(4a)^{2\epsilon}\pi^{d+1/2}\Gamma(\epsilon-d/2)}{2^{d-1}\Gamma\left(\frac{d+1}{2}\right)\Gamma(\epsilon)}
+\ee
+
+	The key to eliminate the divergence is to conduct a coordinate transformation whose Jacobian vanishes at the singular region, which is exactly $\cJ = r^3 \sin2\theta$ does at $\theta = 0, \pi/2$. 
+	
+	Besides, we've also proved the validity of the trick in our case, namely:
+\be
+	I_2 = \int\sqrt{g(x)}d^dx\int\sqrt{g(y)}d^dy\langle\cO(x)\cO(y)\rangle_{\rm CFT} == V_d\int\sqrt{g(x)}d^dx\langle\cO(x)\cO(0)\rangle_{\rm CFT}
+\ee
+
+	where the $V_d$ is the volumn we obtained after integration w.r.t. $\sqrt{g(y)}d^dy$ over the whole space: $V_d = \int \sqrt{g(y)}d^dy$, gives exactly the correct result as the one we obtained through the tedious work above.
+	
+	Here we give an explanation for the validity of the trick. To begin with, we assume the metric is diagonalized, $g_{\mu\nu}  = \delta_{\mu\nu}g_{\mu\mu}$, which works for most of our frequently-used coordinates, like spherical coordinate, stereotype coordinate, Cartesian coordinate, etc.; even the metric tensor is not diagonalized, we're always able to diagonalize it. The integral
+\be
+	I = \int \sqrt{g(x)}d^d x\int \sqrt{g(y)}d^d y \frac{1}{\left(\bar{\int}_{x^\mu}^{y^\mu}g_{\mu\mu}(t)dt^{\mu}dt^\mu\right)} 
+	\label{IntegralBeforeTransformation}
+\ee
+
+	where $\bar{\int}$ means take the path on the specific path that gives Euclidean distance after coordinate transformation. Then we take conformal transformation which naively acts on each component $dX^\mu = \sqrt{g_{\mu\mu}} dx^\mu$ where there's no summation in the RHS., the integral then becomes
+\be
+	I = \int d^d X \int d^d Y \frac{1}{|X-Y|}
+	\label{IntegralAfterTransformation}
+\ee
+	
+	then it's natural to make the coordinate transformation $(X' = X, Y' = X - Y)$ to draw our conclustion. \footnote{Note that the path of $\bar{\int}$ above is poorly understood now, because it's remarkable that this kind of conformal transformation maps a geodesic to another only under the condition that $g_{\mu\mu} = $ for all $\mu$. Given a coordinate $z^\mu$ where $g_{\mu\nu} = \delta_{\mu\nu}f_\mu(z)$, we obtain the connection:
+\be
+	\Gamma_{\nu\rho}^\mu = \frac{1}{2f_\mu}\left(-\delta_{\nu\rho}\partial_\mu f_\nu + \delta_{\mu\rho}\partial_\nu f_\rho + \delta_{\mu\nu}\partial_\rho f_\mu\right)\quad {\rm (no\;summing)}
+\ee
+	
+	After making the transformation $dZ^\mu = \sqrt{g_{\mu\mu}(z)} dz^\mu$ such that $ds^2 = \delta_{\mu\nu}dZ^\mu dZ^\nu$, the geodesic equation in coordinate $Z^\mu$ is given through that in $z^\mu$:
+\be
+	\frac{d^2Z^\mu}{d\tau^2} = \frac{1}{2\sqrt{f_\mu}}\sum_\nu\left[(u^\nu)^2 \partial_\mu f_\nu - u^\mu u^\nu (\partial_\nu f_\mu)\right]\quad {\rm (not\;summing \;with \;\mu)}
+\ee
+
+	Since the path $z^\mu(\tau)$ is randomly chosen, the geodesic in $z^\mu$ is only geodesic in $Z^\mu$ when $\partial_\mu f_\nu = 0$, which is trivial. The conclusion for our demonstration here is for most conformal transformations, the integral $\bar\int$ is not well-defined on its own foot, but strongly dependent to the Euclidean coordinate that it maps to, according to the fact that the integrating path is the inverse image of geodesic(straight line) in its corresponding Euclidean space, which proves the existence of the path. } Actually, in the success reproduction in \cite{Klebanov:2011fs}, the chordal distance $s(x,y) = \frac{2a|x-y|}{\sqrt{1+|x|^2}\sqrt{1+|y|^2}}$ is exactly the distance in the Euclidean space $\mathbb{E}^{d+1}$ after absorbing the scaling of stereographic plane, the example also teaches us the integral \ref{IntegralAfterTransformation} can also be done along a subset of Euclidean space, e.g. an $\mathbb{S}^d$ lying in $\mathbb{R}^{d+1}$. 
+
+	The above argument also works for three point function, where the coordinate transformation is $(X' = X - Y, Y' = Y, Z' = Z)$.
+	
+	\textcolor{red}{According to the trick}\footnote{Note the integral \ref{MasterIntegral} is different from that in \ref{IntegralAfterTransformation}, more thought is required... }, the master integral \ref{MasterIntegral} that we need to evaluate boils down to:
+\be
+	F''(\epsilon)\Big|_{\epsilon=0} = \frac{-C_TV_d}{4\cS_{d-1}^2}h^{cd}(0)\Omega^{d-2}(0)M_{cd}^{\bar{c}\bar{d}}(0)\int\sqrt{g^{(0)}(x)}d^dx\left[h^{ab}(x)\Omega^{d-2}(x)M_{ab}^{\bar{a}\bar{b}}(x)\frac{\cI_{\bar{a}\bar{b},\bar{c}\bar{d}}(X)}{|X|^{2d}}\right]
+\ee
+
+	
+
+
+\subsection{partition functions of boundary field theory}
+First, we calculate the partition functions with conformally coupled scalar field, which is conjectured to be holographically dual to high-spin Vasilliev theory. But according to \cite{Bobev:2016sh}\cite{Hartnoll:2005kc}, at least for four dimensional squashed sphere, the behavior of partition function between squashed AdS and O(N) model looks similar. 
+
+	Consider the action:\cite{Manvelyan:2007pl}
+\be
+	S_{O(N)} = \frac{1}{2}\int d^dx\sqrt{g}\left(\partial_\mu\phi_a\partial^\mu\phi_a+m^2\phi_a\phi_a+\frac{d-2}{4(d-1)}R\phi_a\phi_a\right),\quad a = 1,...,N.
+\ee
+
+	which indicates massive free scalar fields in Euclidean signature. More specifically, for $d=7$, we need to calculate:
+\be
+	F = -\ln Z = \frac{N}{2}\ln\det\left(\frac{-\nabla^2+m^2+\frac{5}{24}R}{\Lambda^2}\right)
+\ee
+
+	The first step is to calculate the eigenvalues of the Laplace operator $\nabla^2$ in curved space. There're mainly two methods for doing this. Metorphoring the Hamiltonian with an rotor and calculate it numerically using the standard formalism of angular momentum\cite{Hu:1973fb}, or to calculate the eigenvalue of representation of the symmetry group after squashing.\cite{Bobev:2017pf}
+	
+	It's been suggested by \cite{Dowker:1998ts} that vector fields are also worth considering where the eigenvalues are available.
+
+
+\section{questions and plans}
+\subsection{plans on Jan.23}
+$ $
+
+1. reproduce $I_2$ for SU(4)$\times$U(1) against \cite{Bobev:2017pf} and SO(5)$\times$SO(3) against bulk result, using the trick in \cite{Klebanov:2011fs}\cite{Cardy:1988fd}. For the first case, compare it with the result conjectured in \cite{Bueno:2018pf} and for the second case, compare it with our numerical result.
+
+2. Bonus: spectrum of Laplacian.
+
+\subsection{questions}
+$ $
+
+1. how to explain the distribution in Fig.\ref{UV}? Why are some green points divergent?
+
+2. Why is the topology of squashed seven sphere, which is an embedding of $\textbf{HP}^2$, different from standard $S^7$?
+
+3. How to understand for the two metric ansatz, the boundary between UV region for NUT and UV region for Bolt are different?  
+
+4. Accoding to the paper, the taub-nut solution is regarded as physical, why do we have to investigate Euclidean case?
+
+5. There's a sign's dicrepancy in the code for $S^5$, which is present in Pablo's holographic result\cite{Bueno:2018pf}. And what do the signs \texttt{freesc} and \texttt{finalholo} mean? How to determine the range of angular coordinates?
+
+\subsection{previous questions}
+1. In \cite{Bobev:2016sh}, we have shift symmetry along $r$ direction, thus we can eliminate one d.o.f., but once shift $r$ so that $r_0 = 0$, we have used up the symmetry, why can we still use the symmetry to set the first UV coefficient to be $A_0 = 1/4$?
+
+2. About the counting of d.o.f., why is there only one parameter of solutions in \cite{Bobev:2016sh}?
+
+
+3. Why do the green points showed in \ref{UV} disappear in \ref{Origin}?
+
+4. About the ansatz \ref{ansatz2}, we conserve the SO(5) symmetry of the sphere and squashed the rest part, but for ${\rm AdS_4}$, the SO(3) part symmetry is squashed with two different functions. Why this different?
+
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
+\small
+\bibitem{Taub:1951gm}
+A.~H. Taub, ``{Empty Space-Times Admitting a Three Parameter Group of Motions},''
+\href{http://www.jstor.org/stable/1969567}{http://www.jstor.org/stable/1969567}.
+
+
+\bibitem{Newman:1963sm}
+E. Newman, L. Tamburino, T. Unti, ``{Empty-Space Generalization of the Schwarzschild Metric},''\href{https://aip.scitation.org/doi/10.1063/1.1704018}{https://aip.scitation.org/doi/10.1063/1.1704018}
+
+\bibitem{Misner:1965aa}
+C.~W. Misner, ``{Taub-NUT Space as a Counterexample to Almost Anything},''
+\href{http://adsabs.harvard.edu/abs/1967rta1.book..160M}{http://adsabs.harvard.edu/abs/1967rta1.book..160M}
+
+\bibitem{Misner:1963ss}
+C.~W. Misner, ``{The Flatter Regions of Newman, Unti, and Tamburino's Generalized Schwarzschild Space},''\href{http://inspirehep.net/record/44791/}{http://inspirehep.net/record/44791/}
+
+\bibitem{Chamblin:1998ah}
+A. Chamblin, R. Emparan, C.~V.Johnson, R.~C.Myers, ``{Large N Phases, Gravitational Instantons and the Nuts and Bolts of AdS Holography},''\href{https://arxiv.org/abs/hep-th/9808177}{hep-th/9808177}
+
+\bibitem{Bobev:2016sh}
+N. Bobev, T. Hertog, Y. Vreys, ``{The NUTs and Bolts of Squashed Holography},''\href{https://arxiv.org/abs/1610.01497}{1610.01497} \href{https://arxiv.org/pdf/1610.01497.pdf}{pdf}
+
+\bibitem{Cvetic:2005tm}
+M. Cveti\v c, G.~W. Gibbons, H. Lu, C.~N. Pope, ``{Rotating Black Holes in Gauged Supergravities; Thermodynamics, Supersymmetric Limits, Topological Solitons and Time Machines},''\href{https://arxiv.org/abs/hep-th/0504080}{hep-th/0504080}
+
+\bibitem{Emparan:1999ac}
+R. Emparan, C.~V. Johnson, R.~C. Myers, ``{Surface Terms as Counterterms in the AdS/CFT Correspondence},''\href{https://arxiv.org/abs/hep-th/9903238}{hep-th/9903238}
+
+\bibitem{Stephani:2004fe}
+H. Stephani, D. Kramer, M. Maccallum, E. Herlt, ``{Exact Solutions of Einstein's Field Equations, second edition},''\href{http://strangebeautiful.com/other-texts/stephani-et-exact-solns-efe.pdf}{http://strangebeautiful.com/other-texts/stephani-et-exact-solns-efe.pdf}
+
+\bibitem{Calin:2000ss}
+O. Calin, D. Chang, I. Markina, ``{SubRiemannian geometry on the sphere $\mathbb{S}^3$},'' \href{http://math.cts.nthu.edu.tw/Mathematics/english/preprints/prep2007-1-002.pdf}{http://math.cts.nthu.edu.tw/Mathematics/english/preprints/prep2007-1-002.pdf}
+
+\bibitem{Clement:2015wn}
+G. Clement, D. Gal'tsov, M. Guenouche, ``{Rehabilitating space-times with NUTs},''\href{https://www.sciencedirect.com/science/article/pii/S0370269315007492}{https://www.sciencedirect.com/science/article/pii/S0370269315007492}
+
+\bibitem{Miller:1971ie}
+J.~G. Miller, M.~D. Kruskal, B.~B. Gedfrey, ``{Taub-NUT (Newman, Unti, Tamburino) Metric and Incompatible Extensions},''\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.4.2945}{$Phys.\,Rev.\, D$\textbf{ 4} 2945 (1971)}
+
+\bibitem{Griffiths:2009gr}
+J.~B. Griffiths, J. Podosky, ``{Exact Space-Times in Einstein's General Relativity}'', (Cambridge University Press, 2009). See especially chapter 12.
+
+\bibitem{Awad:2002ts}
+A.~M. Awad, A. Chamblin, ``{A Bestiary of Higher Dimensional Taub-NUT-AdS Spacetimes}'',\href{https://arxiv.org/abs/hep-th/0012240}{hep-th/0012240}
+
+\bibitem{Astefanesei:2004cb}
+D. Astefanesei, R.~B. Mann, E. Radu, ``{Nut Charged Space-times and Closed Timelike Curves on the Boundary},''\href{https://arxiv.org/abs/hep-th/0407110}{hep-th/0407110}
+
+\bibitem{Miller:1973km}
+J.~G. Miller, ``{Global analysis of the Kerr-Taub-NUT metric},''\href{https://aip.scitation.org/doi/10.1063/1.1666343}{$J.\,Math.\,Phy.$ \textbf{14} 486 (1973)}
+
+\bibitem{Bueno:2018bl}
+P. Bueno, P.~A. Cano, R.~A. Hennigar, R.~B. Mann, ``{NUTs and bolts beyond Lovelock},''\href{https://arxiv.org/abs/1808.01671}{1808.01671}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Page:1983es}
+D.~N. Page, ``{Classical stability of round and squashed seven-spheres in eleven-dimensional supergravity},''\href{https://journals.aps.org/prd/pdf/10.1103/PhysRevD.28.2976}{phy. rev. D \textbf{28} 2972 (1983)}
+
+\bibitem{Ooguri:2008ss}
+H. Ooguri, C. Park, ``{Superconformal Chern-Simons Theories
+	and the Squashed Seven Sphere},''\href{https://arxiv.org/abs/0808.0500}{0808.0500}
+
+\bibitem{Andy}
+General Relativity with Tetrads, \href{https://www.physicsforums.com/attachments/grtetrad-pdf.45070/}{https://www.physicsforums.com/attachments/grtetrad-pdf.45070/}
+
+\bibitem{Duff:1986}
+M.~J. Duff, B.~E.~W. Nilsson, C.~N. Pope, ``{Kaluza-Klein Supergravity},''\href{https://www.sciencedirect.com/science/article/abs/pii/0370157386901638}{PHYSICS REPORTS (Review Section of Physics Letters) 130, Nos. 1\&2 (1986) 1-142.}
+
+\bibitem{Duff:1983ss}
+M.~J. Duff, B.~E.~W. Nilsson, C.~N. Pope, ``{Spontaneous Supersymmetry Breaking by the Squashed Seven-Sphere},''\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.50.2043}{phy. rev. lett. \textbf{50}, 2043 (1983)}
+
+\bibitem{Englert:192ds}
+F. Englert, ``{Spontaneous compactification of eleven-dimensional supergravity},''\href{https://www.sciencedirect.com/science/article/abs/pii/0370269382906840}{phy. lett. \textbf{B119}, 339-412(1982)}
+
+\bibitem{Awada:1983bd}
+M.~A. Awada, M.~J. Duff, C.~N. Pope, ``{$\cN = 8$ Supergravity Breaks Down to $\cN = 1$},''\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.50.294}{Phys. Rev. Lett. \textbf{50}, 294(1983)}
+
+\bibitem{Aldazabal:2007is}
+G. Aldazabal, A. Font, ``{A second look at $\cN$=1 supersymmetric ${\rm AdS_4}$ vacua of type IIA supergravity},''\href{https://arxiv.org/abs/0712.1021v2}{0712.1021}
+
+\bibitem{Bobev:2017pf}
+N. Bobev, P. Bueno, Y. Vreys, ``{Comments on Squashed-sphere Partition Functions},''\href{https://arxiv.org/abs/1705.00292}{1705.00292} \href{https://arxiv.org/pdf/1705.00292.pdf}{pdf}
+
+\bibitem{Ahn:1999mh}
+C. Ahn, S. Rey, ``{Three-Dimensional CFTs and RG Flow from Squashing M2-Brane Horizon},''\href{https://arxiv.org/abs/hep-th/9908110v1}{hep-th/9908110}
+
+\bibitem{Bizon:2007ss}
+P. Biz\'on, T. Chmaj, G.~W. Gibbons, C.~N. Pope, ``{Gravitational Solitons and the Squashed Seven-Sphere},''\href{https://arxiv.org/abs/hep-th/0701190v2}{hep-th/0701190}
+
+\bibitem{Page:1985lb}
+D.~N. Page, C.~N. Pope, ``{Einstein metrics on quaternionic line bundles},''\href{https://iopscience.iop.org/article/10.1088/0264-9381/3/2/018}{Class. Quantum Grav. \textbf{3}(1986) 249-259}
+
+\bibitem{Nilsson:1984es}
+B.~E.~W. Nilsson, C.~N. Pope, ``Hopf fibration of eleven-dimensional supergravity",\href{https://iopscience.iop.org/article/10.1088/0264-9381/1/5/005}{{\rm Class. Quantum Grav. \textbf{1} 499}}
+	
+\bibitem{Mann:1999se}
+R.~B. Mann, ``{Misner String Entropy},''\href{https://arxiv.org/pdf/hep-th/9903229.pdf}{hep-th/9903229}
+
+\bibitem{Blau:2019gr}
+M. Blau, ``{Leture notes on general relativity},'' \href{http://www.blau.itp.unibe.ch/newlecturesGR.pdf}{{\tt link}}
+
+\bibitem{Hawking:1977qg}
+G.~W. Gibbons, S.~W.Hawking, ``{Action integrals and partition functions in quantum gravity},''\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.15.2752}{\textit{Phys. Rev. D} \textbf{15} 2752(1977)}
+
+\bibitem{Papadimitriou:2016hr}
+I. Papadimitriou, ``{Lectures on Holographic Renormalization},\href{http://indico.ictp.it/event/8560/session/31/contribution/130/material/0/1.pdf}{\textit{Springer Proc.Phys.} \textbf{176} 131-181 (2016)}
+
+K. Skenderis, ``{Lecture Notes on Holographic Renormalization},''\href{https://arxiv.org/abs/hep-th/0209067}{hep-th/0209067}
+
+\bibitem{Henningson:1998wa}
+M. Henningson, K. Skenderis, ``{The Holographic Weyl Anomaly},''\href{https://arxiv.org/pdf/hep-th/9806087.pdf}{hep-th/9806087}
+
+M. Henningson, K. Skenderis, ``{Holography and the Weyl anomaly},''\href{https://arxiv.org/pdf/hep-th/9812032.pdf}{hep-th/9812032}
+
+V. Balasubramanian, P. Kraus, ``{A Stress Tensor For Anti-de Sitter Gravity},''\href{https://arxiv.org/pdf/hep-th/9902121.pdf}{hep-th/9902121}
+
+\bibitem{Hughes:2015ai}
+T.~L. Hughes, R.~G. Leigh, O. Parrikar, S. ~T. Ramamurthy,``{Entanglement Entropy \& Anomaly Inflow},''\href{https://arxiv.org/pdf/1509.04969.pdf}{1509.04969}
+
+\bibitem{Clarkson:2002}
+R. Clarkson, L. Fatibene, R.~B. Mann, ``{Thermodynamics of $(d+1)$-dimensional NUT-charged AdS Spacetimes}'',\href{https://arxiv.org/abs/hep-th/0210280v2}{hep-th/0210280}
+
+\bibitem{Hawking:1983ss}
+S.~W. Hawking, D.~N. Page, ``{Thermodynamics of black holes in anti-de Sitter space},''\href{https://link.springer.com/article/10.1007/BF01208266}{Commun. Math. Phys. \textbf{87} 577(1983)}
+
+\bibitem{Gibbons:1990rb}
+G.~W. Gibbons, D.~N. Page, C.~N. Pope, ``{Einstein Metrics on $S^3$, $R^3$ and $R^4$ Bundles},'' \href{https://projecteuclid.org/download/pdf_1/euclid.cmp/1104180218}{Commun. Math. Phys. \textbf{127}(1990) 529-553}
+
+\bibitem{Bakas:1998gi}
+I. Bakas, E.~G. Floratos, and A. Kehagias, ``{Octonionic Gravitational Instantons},'' \href{https://arxiv.org/pdf/hep-th/9810042.pdf}{hep-th/9810042}
+
+\bibitem{Kanno:1999sh}
+	H. Kanno, Y. Yasui, ``{Octonionic Yang-Mills Instanton on Quaternionic Line Bundle of Spin(7) Holonomy},'' \href{https://arxiv.org/pdf/hep-th/9910003.pdf}{hep-th/9910003}
+	
+\bibitem{Hiragane:2003km}
+M. Hiragane, Y. Yasui, H. Ishihara, ``{Compact Einstein Spaces based on Quaternionic K\"ahler Manifolds},'' \href{https://arxiv.org/pdf/hep-th/0305231.pdf}{hep-th/0305231}
+
+\bibitem{Ooguri:2017as}
+H. Ooguri, C. Vafa, ``{Non-supersymmetric AdS and the Swampland},'' \href{https://arxiv.org/pdf/1610.01533.pdf}{1610.01533}
+
+\bibitem{Ooguri:2017av}
+H. Ooguri, L. Spodyneiko, ``{New Kaluza-Klein Instantons and Decay of AdS Vacua},'' \href{https://arxiv.org/pdf/1703.03105.pdf}{1703.03105}
+
+\bibitem{Gubster:2002mt}
+S.~S. Gubster, ``{TASI lectures: special holonomy
+	in string theory and M-theory},'' \href{https://arxiv.org/pdf/hep-th/0201114.pdf}{hep-th/0201114}
+
+\bibitem{Duff:2002ty}
+M.~J. Duff, ``{M-theory on manifolds of	${\rm G_2}$ holonomy: the first twenty years},'' \href{https://arxiv.org/pdf/hep-th/0201062.pdf}{hep-th/0201062}
+
+\bibitem{Bryant:1989eh}
+R.~L. Bryant, S.~M. Salamon, ``{On the construction of some complete metrics with exceptional holonomy},'' \href{https://projecteuclid.org/download/pdf_1/euclid.dmj/1077307681}{Duke Math. J. \textbf{58},3(1989)}
+
+\bibitem{Grana:2005cr}
+M. Gra${\rm \tilde{n}}$a, ``{Flux compactifications in string theory: a comprehensive review},'' \href{https://arxiv.org/abs/hep-th/0509003}{hep-th/0509003}
+
+\bibitem{Maartens:2010wg}
+R. Maartens, K. Koyama, ``{Brane-World Gravity},'' \href{https://arxiv.org/pdf/1004.3962.pdf}{1004.3962}
+
+\bibitem{Jensen:1975}
+G. Jensen, Duke Math. J. \textbf{42}, 397(1975).
+
+\bibitem{Cvetic:2001ac}
+M. Cveti\v c, G.~W. Gibbons, H. L\"u, C.~N. Pope, ``{Hyper-K\"ahler Calabi Metrics, ${\rm L^2}$ Harmonic Forms,	Resolved M2-branes, and ${\rm AdS_4/CFT_3}$ Correspondence},'' \href{https://arxiv.org/pdf/hep-th/0102185.pdf}{hep-th/0102185}
+
+\bibitem{Gukov:2001sm}
+S. Gukov, J. Sparks, ``{M-Theory on Spin(7) Manifolds}'', \href{https://arxiv.org/pdf/hep-th/0109025.pdf}{hep-th/0109025}
+
+\bibitem{Cvetic:2001gh}
+M. Cveti\v c, G.~W. Gibbons, H. L\"u, C.~N. Pope, ``{Cohomogeneity One Manifolds of Spin(7) and ${\rm G2}$ Holonomy},'' \href{https://arxiv.org/pdf/hep-th/0108245.pdf}{hep-th/0108245}
+
+\bibitem{Cvetic:2001sm}
+M. Cveti\v c, G.~W. Gibbons, H. L\"u, C.~N. Pope, ``{New Complete Non-compact Spin(7) Manifolds},'' \href{https://arxiv.org/pdf/hep-th/0103155.pdf}{hep-th/0103155}
+
+\bibitem{Hartnoll:2005kc}
+S.~A. Hartnoll, S.~P. Kumar, ``{The O(N) model on a squashed $S^3$ and the Klebanov-Polyakov correspondence},'' \href{https://arxiv.org/abs/hep-th/0503238}{hep-th/0503238}
+
+\bibitem{Manvelyan:2007pl}
+R. Manvelyan, D.~H. Tchrakian, ``{Conformal coupling of the scalar field with gravity in higher dimensions and invariant powers of the Laplacian},'' \href{https://arxiv.org/abs/hep-th/0611077}{hep-th/0611077}
+
+\bibitem{Hu:1973fb}
+B.~L. Hu, ``{Scalar Waves in the Mixmaster Universe. I. The Helmholtz Equation in a Fixed Background},'' \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.8.1048}{Phys. Rev. \textbf{D8}, 1048(1973)}; T.~C. Shen, J. Sobszyk, ``{Higher-dimensional self-consistent solution with deformed internal space},'' \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.36.397}{Phys. Rev. \textbf{D36}, 397(1987)}
+
+\bibitem{Dowker:1998ts}
+J.~S. Dowker, ``{Effective actions on the squashed three-sphere},'' \href{https://arxiv.org/abs/hep-th/9812202}{hep-th/9812202}
+
+\bibitem{Buchel:2010ad}
+A. Buchel, J. Escobedo, R.~C. Myers, M.~F. Paulos, A. Shina, M. Smolkin, ``{Holographic GB gravity in arbitrary dimensions},'' \href{https://arxiv.org/pdf/0911.4257.pdf}{0911.4257}
+
+\bibitem{Bueno:2018pf}
+P. Bueno, P.~A. Cano, R.~A. Hennigar, R.~B. Mann, ``{Universality of squashed-sphere partition functions},'' \href{https://arxiv.org/pdf/1808.02052.pdf}{1808.02052}.
+
+\bibitem{Khodam:2009eg}
+M.~H. Dehghani, A. Khodam-Mohammadi, ``{Thermodynamics of Taub-NUT/bolt Black Holes in Einstein-Maxwell Gravity},'' \href{https://arxiv.org/abs/hep-th/0604171}{hep-th/0604171} \href{https://arxiv.org/pdf/hep-th/0604171.pdf}{pdf}; A. Khodam-Mohammadi, M. Monshizadeh, ``{Thermodynamics of Taub-NUT/Bolt-AdS Black Holes in Einstein-Gauss-Bonnet Gravity}'', \href{https://arxiv.org/pdf/0811.1268.pdf}{0811.1268}
+
+\bibitem{Erdmenger:1996gd}
+J. Erdmenger, H. Osborn, ``{Conserved Currents and the Energy Momentum Tensor in Conformally Invariant Theories for General Dimensions},'' \href{https://arxiv.org/pdf/hep-th/9605009.pdf}{hep-th/9605009}; H. Osborn, A. Petkos, ``{Implications of Conformal Invariance in Field Theories for General Dimensions},'' \href{https://arxiv.org/pdf/hep-th/9307010.pdf}{hep-th/9307010}
+
+\bibitem{Robinson:2006sd}
+S.~P. Robinson, ``{Normalization conventions for Newton's constant and the Planck scale in arbitrary spacetime dimension},'' \href{https://arxiv.org/pdf/gr-qc/0609060.pdf}{gr-qc/0609060}
+
+\bibitem{Cano:2019hh}
+P.~A. Cano, ``{Higher-Curvature Gravity, Black Holes and Holography},'' \href{https://arxiv.org/abs/1912.07035}{1912.07035} \href{https://arxiv.org/pdf/1912.07035.pdf}{pdf}
+
+\bibitem{Klebanov:2011fs}
+I.~R. Kelbanov, S.~S. Pufu, B.~R. Safdi, ``{F-Theorem without Supersymmetry},'' \href{https://arxiv.org/pdf/1105.4598.pdf}{1105.4598}
+
+\bibitem{Cardy:1988fd}
+J. ~L. Cardy, ``{Is there a c-theorem in four dimensions?},'' \href{https://www.sciencedirect.com/science/article/pii/0370269388900548}{Phys. lett. \textbf{B215}, 4, 749(1988)}
+
+\bibitem{Grozin:2005qq}
+A. Grozin, ``{Lectures on QED and QCD},'' \href{https://arxiv.org/pdf/hep-ph/0508242.pdf}{hep-ph/0508242.pdf}; ``{$\beta$ function QED to two loops - traditionally and with Corolla polynomial}'', \href{http://www2.mathematik.hu-berlin.de/~kreimer/wp-content/uploads/grauelm.pdf}{pdf}
+
+
+
+\end{thebibliography}\endgroup
+
+
+\end{document}
